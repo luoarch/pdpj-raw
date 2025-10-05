@@ -1,0 +1,13 @@
+{
+  "description": "Exemplo de arquivo de override de configurações em JSON",
+  "usage": "Definir CONFIG_OVERRIDE_FILE=config-examples/override.json para usar estas configurações",
+  "configurations": {
+    "log_level": "DEBUG",
+    "cache_ttl": 600,
+    "rate_limit_requests": 2000,
+    "enable_metrics": true,
+    "metrics_protected": false,
+    "cors_origins": ["http://localhost:3000", "http://localhost:8080"],
+    "api_title": "PDPJ API - Override Example"
+  }
+}

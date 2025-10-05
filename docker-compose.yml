@@ -1,0 +1,289 @@
+services:
+  # Banco de dados PostgreSQL otimizado
+  postgres:
+    image: postgres:15-alpine
+    container_name: pdpj_postgres
+    environment:
+      POSTGRES_DB: pdpj_db
+      POSTGRES_USER: pdpj_user
+      POSTGRES_PASSWORD: pdpj_password
+      # Otimizações de performance
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+    command: >
+      postgres
+      -c shared_preload_libraries=pg_stat_statements
+      -c max_connections=200
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+      -c work_mem=4MB
+      -c min_wal_size=1GB
+      -c max_wal_size=4GB
+      -c max_worker_processes=8
+      -c max_parallel_workers_per_gather=4
+      -c max_parallel_workers=8
+      -c max_parallel_maintenance_workers=4
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+        reservations:
+          cpus: '1.0'
+          memory: 2G
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pdpj_user -d pdpj_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis otimizado para cache e Celery
+  redis:
+    image: redis:7-alpine
+    container_name: pdpj_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: >
+      redis-server
+      --maxmemory 1gb
+      --maxmemory-policy allkeys-lru
+      --save 900 1
+      --save 300 10
+      --save 60 10000
+      --appendonly yes
+      --appendfsync everysec
+      --tcp-keepalive 300
+      --timeout 0
+      --tcp-backlog 511
+      --databases 16
+      --hz 10
+      --dynamic-hz yes
+      --rdbcompression yes
+      --rdbchecksum yes
+      --stop-writes-on-bgsave-error yes
+      --replica-read-only yes
+      --repl-diskless-sync yes
+      --repl-diskless-sync-delay 5
+      --repl-ping-replica-period 10
+      --repl-timeout 60
+      --repl-disable-tcp-nodelay no
+      --repl-backlog-size 1mb
+      --repl-backlog-ttl 3600
+      --maxclients 10000
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Aplicação FastAPI otimizada
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: pdpj_api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://pdpj_user:pdpj_password@postgres:5432/pdpj_db
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/1
+      # Configurações de performance
+      - UVICORN_WORKERS=4
+      - MAX_CONCURRENT_REQUESTS=100
+      - MAX_CONCURRENT_DOWNLOADS=50
+      - REDIS_MAX_CONNECTIONS=100
+      - BULK_BATCH_SIZE=1000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    command: ./run-production.sh
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+        reservations:
+          cpus: '1.0'
+          memory: 2G
+
+  # Worker Celery 1: Processos
+  celery_worker_processes:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: pdpj_celery_processes
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://pdpj_user:pdpj_password@postgres:5432/pdpj_db
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/1
+      - CELERY_WORKERS=1
+      - CELERY_CONCURRENCY=4
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    command: celery -A app.tasks.celery_app worker --loglevel=info --queues=processes,default --concurrency=4 --hostname=worker-processes@%h
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+  # Worker Celery 2: Documentos
+  celery_worker_documents:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: pdpj_celery_documents
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://pdpj_user:pdpj_password@postgres:5432/pdpj_db
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/1
+      - CELERY_WORKERS=1
+      - CELERY_CONCURRENCY=4
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    command: celery -A app.tasks.celery_app worker --loglevel=info --queues=documents,default --concurrency=4 --hostname=worker-documents@%h
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+  # Worker Celery 3: Ultra Fast
+  celery_worker_ultra_fast:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: pdpj_celery_ultra_fast
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://pdpj_user:pdpj_password@postgres:5432/pdpj_db
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/1
+      - CELERY_WORKERS=1
+      - CELERY_CONCURRENCY=4
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    command: celery -A app.tasks.celery_app worker --loglevel=info --queues=ultra_fast,default --concurrency=4 --hostname=worker-ultra-fast@%h
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+  # Worker Celery 4: Geral
+  celery_worker_general:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: pdpj_celery_general
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://pdpj_user:pdpj_password@postgres:5432/pdpj_db
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/1
+      - CELERY_WORKERS=1
+      - CELERY_CONCURRENCY=4
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    command: celery -A app.tasks.celery_app worker --loglevel=info --queues=default,processes,documents --concurrency=4 --hostname=worker-general@%h
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+  # Flower para monitoramento do Celery
+  flower:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: pdpj_flower
+    ports:
+      - "5555:5555"
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/1
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    command: celery -A app.tasks.celery_app flower --port=5555
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+volumes:
+  postgres_data:
+  redis_data:

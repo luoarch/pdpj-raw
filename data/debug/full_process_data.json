@@ -1,0 +1,1873 @@
+{
+  "nivelSigilo": 0,
+  "siglaTribunal": "TRF3",
+  "numeroProcesso": "5000315-75.2025.4.03.6327",
+  "tramitacaoAtual": {
+    "idOrigem": "11542912",
+    "dataHoraAjuizamento": "2025-01-30T13:10:52.6",
+    "instancia": "PRIMEIRO_GRAU",
+    "grau": {
+      "sigla": "G1",
+      "nome": "1° Grau",
+      "numero": 1
+    },
+    "valorAcao": 61592.28,
+    "classe": [
+      {
+        "codigo": 436,
+        "descricao": "Procedimento do Juizado Especial Cível"
+      }
+    ],
+    "distribuicao": [
+      {
+        "dataHora": "2025-01-30T13:10:52.6",
+        "orgaoJulgador": [
+          {
+            "id": -1,
+            "nome": "2ª Vara Gabinete JEF de São José dos Campos"
+          }
+        ]
+      }
+    ],
+    "movimentos": [
+      {
+        "dataHora": "2025-06-30T17:54:11.072",
+        "descricao": "Arquivado Definitivamente"
+      },
+      {
+        "dataHora": "2025-06-30T17:16:45.534",
+        "descricao": "Transitado em Julgado em 30/06/2025"
+      },
+      {
+        "dataHora": "2025-06-19T07:03:24.925",
+        "descricao": "Decorrido prazo de ADEMILSON DIAS COSTA em 18/06/2025 23:59."
+      },
+      {
+        "dataHora": "2025-06-04T00:42:17.874",
+        "descricao": "Publicado Sentença em 04/06/2025."
+      },
+      {
+        "dataHora": "2025-06-04T00:42:17.764",
+        "descricao": "Disponibilizado no DJ Eletrônico em 03/06/2025"
+      },
+      {
+        "dataHora": "2025-06-02T12:53:58.944",
+        "descricao": "Expedição de Outros documentos."
+      },
+      {
+        "dataHora": "2025-05-30T15:26:57.99",
+        "descricao": "Extinto o processo por desistência"
+      },
+      {
+        "dataHora": "2025-05-30T12:42:17.901",
+        "descricao": "Conclusos para julgamento"
+      },
+      {
+        "dataHora": "2025-05-30T10:56:56.333",
+        "descricao": "Juntada de Petição de pedido de desistência"
+      },
+      {
+        "dataHora": "2025-05-14T22:28:45.261",
+        "descricao": "Publicado Ato Ordinatório em 09/05/2025."
+      },
+      {
+        "dataHora": "2025-05-14T22:28:45.193",
+        "descricao": "Disponibilizado no DJ Eletrônico em 08/05/2025"
+      },
+      {
+        "dataHora": "2025-05-07T16:09:52.843",
+        "descricao": "Expedição de Outros documentos."
+      },
+      {
+        "dataHora": "2025-05-07T16:09:51.367",
+        "descricao": "Juntada de ato ordinatório"
+      },
+      {
+        "dataHora": "2025-05-07T16:05:46.357",
+        "descricao": "Juntada de ato ordinatório"
+      },
+      {
+        "dataHora": "2025-04-28T15:18:48.138",
+        "descricao": "Juntada de Petição de petição intercorrente"
+      },
+      {
+        "dataHora": "2025-04-01T00:23:04.007",
+        "descricao": "Publicado Ato Ordinatório em 01/04/2025."
+      },
+      {
+        "dataHora": "2025-04-01T00:23:03.752",
+        "descricao": "Disponibilizado no DJ Eletrônico em 31/03/2025"
+      },
+      {
+        "dataHora": "2025-03-28T12:50:47.504",
+        "descricao": "Expedição de Outros documentos."
+      },
+      {
+        "dataHora": "2025-03-28T12:50:44.279",
+        "descricao": "Juntada de ato ordinatório"
+      },
+      {
+        "dataHora": "2025-03-27T15:08:17.902",
+        "descricao": "Juntada de ato ordinatório"
+      },
+      {
+        "dataHora": "2025-03-26T09:30:57.907",
+        "descricao": "Juntada de Petição de petição intercorrente"
+      },
+      {
+        "dataHora": "2025-03-07T03:31:27.625",
+        "descricao": "Publicado Ato Ordinatório em 28/02/2025."
+      },
+      {
+        "dataHora": "2025-03-07T03:31:26.718",
+        "descricao": "Disponibilizado no DJ Eletrônico em 27/02/2025"
+      },
+      {
+        "dataHora": "2025-02-26T12:20:36.198",
+        "descricao": "Expedição de Outros documentos."
+      },
+      {
+        "dataHora": "2025-02-25T17:02:57.519",
+        "descricao": "Juntada de laudo pericial"
+      },
+      {
+        "dataHora": "2025-02-25T16:58:50.989",
+        "descricao": "Juntada de laudo pericial"
+      },
+      {
+        "dataHora": "2025-02-25T16:58:41.777",
+        "descricao": "Juntada de laudo pericial"
+      },
+      {
+        "dataHora": "2025-02-25T16:58:33.508",
+        "descricao": "Juntada de laudo pericial"
+      },
+      {
+        "dataHora": "2025-02-25T16:58:22.561",
+        "descricao": "Juntada de laudo pericial"
+      },
+      {
+        "dataHora": "2025-02-25T16:58:11.495",
+        "descricao": "Juntada de laudo pericial"
+      },
+      {
+        "dataHora": "2025-02-24T16:50:21.822",
+        "descricao": "Recebidos os autos"
+      },
+      {
+        "dataHora": "2025-02-24T16:50:21.701",
+        "descricao": "Remetidos os Autos (para processamento) da Distribuição para Secretaria processante"
+      },
+      {
+        "dataHora": "2025-02-24T16:50:20.838",
+        "descricao": "Juntada de ato ordinatório"
+      },
+      {
+        "dataHora": "2025-02-24T16:50:15.379",
+        "descricao": "Expedição de Informação de Irregularidade"
+      },
+      {
+        "dataHora": "2025-01-31T10:05:57.752",
+        "descricao": "Juntada de certidão"
+      },
+      {
+        "dataHora": "2025-01-30T13:10:52.952",
+        "descricao": "Recebido pelo Distribuidor"
+      },
+      {
+        "dataHora": "2025-01-30T13:10:52.641",
+        "descricao": "Distribuído por sorteio"
+      }
+    ],
+    "assunto": [
+      {
+        "codigo": 6107,
+        "descricao": "Auxílio-Acidente (Art. 86)",
+        "hierarquia": "(6107) Auxílio-Acidente (Art. 86) | (6094) Benefícios em Espécie | (195) DIREITO PREVIDENCIÁRIO"
+      }
+    ],
+    "partes": [
+      {
+        "polo": "PASSIVO",
+        "nome": "INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS",
+        "outrosNomes": [
+          {
+            "nome": "GERENCIA EXECUTIVA - APS - SANTO AMARO - SAO PAULO - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "INSTITUTO NACIONAL DO SEGURO SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CGOFC@PREVIDENCIA.GOV.BR",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPERINTENDENTE REGIONAL NORTE/CENTRO-OESTE DO INSS - SRV",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA DA APS EM BEBEDOURO-SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GUILHERME DEMARCHI SILVA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CONSELHO DE RECURSOS DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE ARACATUBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ARACATUBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ARACATUBA",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "CHEFE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE ADMINISTRATIVO INSS AGENCIA CAMPINAS,SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "USIEL BRITO SANTOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE ADMINISTRATIVO INSS AGENCIA TATUAPE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA DA PREVIDENCIA SOCIAL - CAMPO GRANDE / CORONEL ANTONINO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA PREVIDENCIA SOCIAL -CAMPO GRANDE CORONEL ANTONINO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPERINTENDENTE REGIONAL SUDESTE I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA UNIDADE PRESIDENTE PRUDENTE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL DE SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO SANTOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CRPS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA DE SAO BERNARDO DO CAMPO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DE SAO BERNARDO DO CAMPO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DE MORRO AGUDO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS- AGENCIA CAMPO LIMPO PAULISTA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS DE CAMPINAS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA DO INSS DE RIO CLARO - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS EM GUARULHOS - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE-EXECUTIVO DA REGIONAL DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PREVIDENCIA SOCIAL - GERENTE EXECUTIVO DA CEAB",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO(A) DA AGENCIA DA PREVIDENCIA SOCIAL DE MOGI GUACU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DE TATUAPE-SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA VILA MARIANA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO AGENCIA VILA MARIANA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA VILA MARIANA",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "GERENTE DA APS - CEAB - RECONHECIMENTO DE DIREITOS DA SRI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "INSS.",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL - INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE-EXECUTIVO DO ORGAO ATUAL DE SERVICO DE RECONHECIMENTO DE DIREITOS SR SUDESTE I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA  18 JUNTA  DE RECURSOS DO CONSELHO DE RECURSO DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA 19 JUNTA DE RECURSOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUDESTE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO ORGAO ATUAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL DE CAMPINAS/SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ANA CAROLINA ALEXANDRINO MUNHOZ MORI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "JUNTA DE RECURSOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AGENCIA DA PREVIDENCIA SOCIAL CEAB RECONHECIMENTO DE DIREITO DA SRI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA SANTO ANDRE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CENTRAL DE ANALISE DE BENEFICIOS PARA RECONHECIMENTO DE DIREITOS DO SUPERINTENDENCIA REGIONAL I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "APS CIDADE ADEMAR",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DA PREVIDENCIA SOCIAL DE SAO JOSE DOS CAMPOS -SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA SANTO AMARO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL (APS SAO PAULO - SANTO AMARO)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL (APS SAO PAULO - SANTO AMARO)",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "AUTORIDADE COATORA CHEFE INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AUTORIDADE COATORA - CHEFE INSS JAU SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CRISTIANO SANTOS DA SILVA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA CENTRAL DE ANALISE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA CENTRAL DE ANALISE DE BENEFICIO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AUTORIDADE COATORA - CHEFE INSS GUARULHOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO AGENCIA DE VARGEM GRANDE PAULISTA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVA INSS DE GUARULHOS -  JULIANA MIO CRUZ",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL DE RIBEIRAO PIRES- SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "FABIO NASCIMENTO MARTIN",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ELISANGELA BARROS BARBEIRO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS BOTUCATU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "TAUBATE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA INSS SAO PAULO - SP CENTRO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA - UNIDADE DE ATENDIMENTO DA PREVIDENCIA SOCIAL - INSS - BRAS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA SUPERINTENDENCIA DA CEAB-RECONHECIMENTO DE DIREITO SRI (IMPETRADO)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA - UNIDADE DE ATENDIMENTO DA PREVIDENCIA SOCIAL - INSS - CIDADE DUTRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SAO JOAO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SAO JOAO DA BOA VISTA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "VILTER",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "VILTER CROQUI MARCONDES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "APS; 23.0.01.240 - AGENCIA PREVIDENCIA SOCIAL UNIDADE PROCESSAMENTO AUTOMATICA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "APS 23001240 - AGENCIA PREVIDENCIA SOCIAL UNIDADE PROCESSAMENTO AUTOMATICO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA JUNTA DE RECURSO DA PREVIDENCIA SOCIAL  - CRPS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "EDIJAN FERREIRA CHAVES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "JOSE CARLOS OLIVEIRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE CENTRAL REGIONAL DE ANALISE DE BENEFICIOS PARA ATENDIEMNTO DE DEMANDAS JUDICIAIS DA SUPERINT",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA  EXECUTIVA DO INSS EM PRESIDENTE PRUDENTE (SP)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS GUARAUNA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS PRAIA GRANDE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRAIA GRANDE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SANTOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS MOGI DAS CRUZES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS GUARULHOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA SAO PAULO LESTE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AGENCIA DA PREVIDENCIA SOCIAL DA PENHA/SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA CEAB - CENTRAL REGIONAL DE ANALISE DE BENEFICIO PARA RECONHECIMENTO DE DIREITOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO AGENCIA GENERAL SALGADO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO SERVICO DE CENTRALIZACAO DA ANALISE DE RECONHECIMENTO DE DIREITOS (SRSEI) DO IN",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DO EXECUTIVO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DRACENA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS - VALE DO PARAIBA SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "DIRETOR DO INSS DE GUARULHOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS SANTOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA APS DE SAO CARLOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AGENCIA DA PREVIDENCIA SOCIAL FRANCO DA ROCHA - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE ADMINSTRATIVO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "VILA PARANAGUA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA B DO INSS EM BAURU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS EM JUNDIAI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA CENTRAL DE ANALISE DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "LUCAS RIBEIRO MARTINS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AGENCIA DA PREVIDENCIA SOCIAL SAO PAULO - TATUAPE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPERINDENCIA REGIONAL SUDESTE I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA DO INSTITUTO NACIONAL DE SEGURO SOCIAL EM CAMPO GRANDE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE-EXECUTIVO DA AGENCIA DA PREVIDENCIA SOCIAL DE GUARULHOS - SP,",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CEAB",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SRSEI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA JUNTA DE RECURSOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO CEAB RECONHECIMENTO DE DIREITO SR1",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DE CAMPINAS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVA B DO INSS EM BAURU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "EDUARDO NAGATANI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA JUNTA DE RECURSO DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE REGIONAL DE BENEFICIOS BOTUCATU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "INSS INSTITUTO NACIONAL DO SEGURO SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DE SERVICO DE RECONHECIMENTO DE DIREITOS SUPERINTENDENCIA REGIONAL SR SUDESTE I EM SAO PAUL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "WILSON JOSE DA SILVA ARAUJO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "JUNDIAI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS EM JUNDIAI",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "JOSE CLEUDOMAR REBOUCAS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SAO BERNARDO DO CAMPO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DA PREVIDENCIA SOCIAL INSS SUZANO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS - AGENCIA ITU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO VALE DO PARAIBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO VALE DO PARAIBA",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DA PREVIDENCIA SOCIAL DE TAUBATE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DA PREVIDENCIA SOCIAL CEAB RECONHECIMENTO DE DIREITO DA SRI PARA 21150521 - SERVI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS OSASCO/SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ADRIANA NUNES DOS SANTOS OLIVEIRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ANALISTA DE BENEFICIOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DO CONSELHO DE RECURSO DA PREVIDENCIA SOCIAL ANA CRISTINA VIANA SILVEIRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ANA CRISTINA VIANA SILVEIRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ANDERSON BUENO DOS SANTOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS GUARULHOS CAROLINE SANCHEZ DE CARVALHO AMERY",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO GUARULHOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CAROLINE SANCHEZ DE CARVALHO AMERY",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUZANO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA DE SERVICO DE CENTRALIZACAO DA ANALISE DE RECONHECIMENTO DE DIREITOS SRSEI",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "INSS DE SANTO ANDRE -SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "MANOEL MOREIRA DA COSTA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENCIA EXECUTIVA PIRACICABA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DO INSS - BARRETO LEME - CAMPINAS-SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CEAB RECONHECIMENTO DE DIREITOS DA SRI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "LUIS EDUARDO RODRIGUES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "20 JUNTA DE RECURSOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "DOURADOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPERINTENDENTE DO SERVICO DE RECONHECIMENTO DE DIREITO DA SR SUDESTE I (SETOR: 21150513)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DA PREVIDENCIA SOCIAL SAO PAULO - JABAQUARA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "TATIANA NIURA SALOMAO PALERMO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA PREVIDENCIA SOROCABA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE REGIONAL DE BENEFICIOS, DO INSTITUTO NACIONAL DO SEGURO SOCIAL-INSS AGENCIA EM PINHEIROS- CA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS PENHA/SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SR. GERENTE EXECUTIVO DA AGENCIA DO INSTITUTO NACIONAL DE SEGURO SOCIAL DE FRANCA SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DO INSS MOGI DAS CRUZES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SR. GERENTE EXECUTIVO DA AGENCIA DO INSTITUTO NACIONAL DO SEGURO SOCIAL DE MOGI DAS CRUZES - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS REGIONAL SUDESTE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "JEFERSON MORENO ULIARI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DA PREVIDENCIA SOCIAL DO INSTITUTO NACIONAL DO SEGURO SOCIAL DE SANTO A",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO AGENCIA TABOAO DA SERRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DO INSS DE RIO CLARO - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA 02 CAMARA DE JULGAMENTO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "GERENTE GERAL DA AGENCIA DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PROCURADOR FEDERAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PROCURADOR",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE AGENCIA INSS-PINHEIROS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPERINTENDENTE REGIONAL DO INSTITUTO NACIONAL DO SEGURO SOCIAL (INSS) - SUDESTE I - SAO PAULO - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE GERAL DA AGENCIA DO INSS - SANTOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA CAMARA DE JULGAMENTO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA DO INSS DE BAURU/SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL DE SAO JOSE DO RIO PRETO-SP, SR. BRUNO VERONEZI FERNANDES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DO INSS ITAQUAQUECETUBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "A VANDERLEI BARBOSA DOS SANTOS SUPERINTENDENCIA REGIONAL SUDESTE I, CHEFE DA AGENCIA DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA  AGENCIA DO INSS DE JACAREI",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "HERMENEGILDO PIRES ALVES, SUPERINTENDENTE REGIONAL SUDESTE I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "HERMENEGILDO PIRES ALVES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS PIRASSUNUNGA (IMPETRADO)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS PIRASSUNUNCA (IMPETRADO)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS TAQUARITUBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS TAQUARITUBA (IMPETRADO)",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DO INSS DE TAQUARITUBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA DO INSS DE ATIBAIA/SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "ILUSTRISSIMO SENHOR HERMENEGILDO PIRES ALVES",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DA AGENCIA DO INSS DE GUARATINGUETA - SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS DE MARILIA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS DE SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA CENTRAL REGIONAL DE ANALISE DE RECONHECIMENTO DE DIREITOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE SERVICO DA CENTRAL DE ANALISE DE RECONHECIMENTO DE DIREITOS SRSE I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "LUCIANO MITSUYUKI SHIMADA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "1 COMPOSICAO DA 6 JUNTA DE RECURSOS DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS ASSIS/ SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA 26 JUNTA DE RECURSOS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DA JUNTA DE RECURSOS DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CHEFE DO SERVICO DE CENTRALIZACAO DA ANALISE DE RECONHECIMENTO DE DIREITOS DA SR-I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CINTIA BIAFORO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE AGENCIA ANHANGUABAU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "CINTIA BIAFORO",
+            "tipo": "ALCUNHA"
+          },
+          {
+            "nome": "GERENTE INSS ITAPECERICA DA SERRA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SANTO ANDRE",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GLAUCO ANDRE FONSECA WAMBUERG",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "SUPERINTENDE REGIONAL DA REGIAO SUDESTE I",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA PREVIDENCIA SOCIAL DE GUARULHOS/SP",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DO INSS DE SAO PAULO - MOOCA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE DO CONSELHO DE RECURSOS DA PREVIDENCIA SOCIAL -INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "PRESIDENTE INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DA PREVIDENCIA SOCIAL DE SAO PAULO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DA PREVIDENCIA SOCIAL DE MOGI GUACU",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS EM UBATUBA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DA PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA DE PREVIDENCIA SOCIAL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DA AGENCIA INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "AGENCIA INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE DO INSS",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DA AGENCIA DE FATIMA DO SUL",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO APS ARICANDUVA MARCIA GARCIA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO INSS SOROCABA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "GERENTE EXECUTIVO DO INSS-AGENCIA ATIBAIA",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "MARCELO FERNANDO BORSIO",
+            "tipo": "OUTRO"
+          },
+          {
+            "nome": "INSS AGENCIA MOGI MIRIM",
+            "tipo": "OUTRO"
+          }
+        ],
+        "sigilosa": false
+      },
+      {
+        "polo": "ATIVO",
+        "nome": "ADEMILSON DIAS COSTA",
+        "documentosPrincipais": [
+          {
+            "numero": "09594212624",
+            "tipo": "CPF"
+          }
+        ],
+        "sigilosa": false,
+        "representantes": [
+          {
+            "tipoRepresentacao": "ADVOGADO",
+            "nome": "MURILO HENRIQUE BALSALOBRE",
+            "cadastroReceitaFederal": [
+              {
+                "numero": 35895186858,
+                "tipo": "CPF"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tribunal": {
+      "sigla": "TRF3",
+      "nome": "Tribunal Regional Federal da 3ª Região",
+      "segmento": "JUSTICA_FEDERAL",
+      "jtr": "403"
+    },
+    "documentos": [
+      {
+        "sequencia": 30,
+        "dataHoraJuntada": "2025-06-30T17:16:45.48",
+        "idCodex": 25863261740,
+        "idOrigem": "374035672",
+        "nome": "Certidão Trânsito em Julgado.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Certidão Trânsito em Julgado",
+          "idCodex": 121701,
+          "idOrigem": "70"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/332b6c58-1ade-5f39-80bb-281614574420/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/332b6c58-1ade-5f39-80bb-281614574420/texto"
+      },
+      {
+        "sequencia": 29,
+        "dataHoraJuntada": "2025-06-02T12:53:54.976",
+        "idCodex": 25537272775,
+        "idOrigem": "366442854",
+        "nome": "Sentença.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 550,
+          "nome": "Sentença",
+          "idCodex": 121351,
+          "idOrigem": "62"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/5e0131cb-2a0a-5f82-9d2c-4b74bc677824/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/5e0131cb-2a0a-5f82-9d2c-4b74bc677824/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 13257,
+          "tamanhoTexto": 988
+        }
+      },
+      {
+        "sequencia": 28,
+        "dataHoraJuntada": "2025-05-30T15:26:57.984",
+        "idCodex": 25520778248,
+        "idOrigem": "366224751",
+        "nome": "Sentença.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 550,
+          "nome": "Sentença",
+          "idCodex": 121351,
+          "idOrigem": "62"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/41d3e2fd-bd4b-5737-ba8d-644292c5b09c/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/41d3e2fd-bd4b-5737-ba8d-644292c5b09c/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 13257,
+          "tamanhoTexto": 988
+        }
+      },
+      {
+        "sequencia": 27,
+        "dataHoraJuntada": "2025-05-30T10:56:56.322",
+        "idCodex": 25498637029,
+        "idOrigem": "366198308",
+        "nome": "Pedido de Desistência.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 185,
+          "nome": "Pedido de Desistência",
+          "idCodex": 265701,
+          "idOrigem": "365"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/bafbfdb2-ab94-5ca0-9cb3-b6e80376a632/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/bafbfdb2-ab94-5ca0-9cb3-b6e80376a632/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 49197,
+          "tamanhoTexto": 1064
+        }
+      },
+      {
+        "sequencia": 26,
+        "dataHoraJuntada": "2025-05-07T16:09:50.726",
+        "idCodex": 25498637028,
+        "idOrigem": "362958746",
+        "nome": "Ato Ordinatório.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 14575,
+          "nome": "Ato Ordinatório",
+          "idCodex": 124301,
+          "idOrigem": "150"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/fa2681e8-9385-5371-893a-20d10dfd489a/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/fa2681e8-9385-5371-893a-20d10dfd489a/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 11589,
+          "tamanhoTexto": 853
+        }
+      },
+      {
+        "sequencia": 25,
+        "dataHoraJuntada": "2025-05-07T16:05:45.997",
+        "idCodex": 25498637027,
+        "idOrigem": "362100256",
+        "nome": "Ato Ordinatório.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 14575,
+          "nome": "Ato Ordinatório",
+          "idCodex": 124301,
+          "idOrigem": "150"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/ddda7b11-c0e7-52bd-a302-515b5bfae580/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/ddda7b11-c0e7-52bd-a302-515b5bfae580/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 11589,
+          "tamanhoTexto": 853
+        }
+      },
+      {
+        "sequencia": 24,
+        "dataHoraJuntada": "2025-04-28T15:18:48.123",
+        "idCodex": 25167525435,
+        "idOrigem": "361980803",
+        "nome": "Petição Intercorrente.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 207,
+          "nome": "Petição Intercorrente",
+          "idCodex": 120551,
+          "idOrigem": "36"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/59a2dbcc-bb58-5281-a656-cfe57861c2db/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/59a2dbcc-bb58-5281-a656-cfe57861c2db/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 50307,
+          "tamanhoTexto": 1030
+        }
+      },
+      {
+        "sequencia": 23,
+        "dataHoraJuntada": "2025-03-28T12:50:43.712",
+        "idCodex": 24820420217,
+        "idOrigem": "358848529",
+        "nome": "Ato Ordinatório.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 14575,
+          "nome": "Ato Ordinatório",
+          "idCodex": 124301,
+          "idOrigem": "150"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/ce1c8709-a38c-56f3-806d-d0c1f287fa09/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/ce1c8709-a38c-56f3-806d-d0c1f287fa09/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 11589,
+          "tamanhoTexto": 853
+        }
+      },
+      {
+        "sequencia": 22,
+        "dataHoraJuntada": "2025-03-27T15:08:17.578",
+        "idCodex": 24805681672,
+        "idOrigem": "358687042",
+        "nome": "Ato Ordinatório.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 14575,
+          "nome": "Ato Ordinatório",
+          "idCodex": 124301,
+          "idOrigem": "150"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/3225ac6c-47f1-5a31-b98d-8fe187939e92/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/3225ac6c-47f1-5a31-b98d-8fe187939e92/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 11589,
+          "tamanhoTexto": 853
+        }
+      },
+      {
+        "sequencia": 21,
+        "dataHoraJuntada": "2025-03-26T09:30:57.897",
+        "idCodex": 24784868143,
+        "idOrigem": "358476202",
+        "nome": "Petição Intercorrente.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 207,
+          "nome": "Petição Intercorrente",
+          "idCodex": 120551,
+          "idOrigem": "36"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/f839b443-889d-5a06-8e4e-991fc9d45ddb/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/f839b443-889d-5a06-8e4e-991fc9d45ddb/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 82219,
+          "tamanhoTexto": 869
+        }
+      },
+      {
+        "sequencia": 20,
+        "dataHoraJuntada": "2025-02-26T12:20:33.663",
+        "idCodex": 23967419121,
+        "idOrigem": "355510634",
+        "nome": "Ato Ordinatório.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 14575,
+          "nome": "Ato Ordinatório",
+          "idCodex": 124301,
+          "idOrigem": "150"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/b3d26e3e-c526-5a7f-b7b1-d4cbf1e9fbe4/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/b3d26e3e-c526-5a7f-b7b1-d4cbf1e9fbe4/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 12518,
+          "tamanhoTexto": 896
+        }
+      },
+      {
+        "sequencia": 19,
+        "dataHoraJuntada": "2025-02-25T17:02:42.657",
+        "idCodex": 23967419120,
+        "idOrigem": "355418785",
+        "nome": "09594212624_Dossiê Médico.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Laudo Pericial",
+          "idCodex": 120351,
+          "idOrigem": "31"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/a7fa835f-8185-5e25-9ef4-e4aec8be6e5d/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/a7fa835f-8185-5e25-9ef4-e4aec8be6e5d/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 12517,
+          "tamanhoTexto": 2520
+        }
+      },
+      {
+        "sequencia": 18,
+        "dataHoraJuntada": "2025-02-25T16:58:41.812",
+        "idCodex": 23967419119,
+        "idOrigem": "355417498",
+        "nome": "09594212624_Relatório Dados Cadastrais CNIS.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Laudo Pericial",
+          "idCodex": 120351,
+          "idOrigem": "31"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/867eeaf3-f947-588e-af93-1bb9193607e4/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/867eeaf3-f947-588e-af93-1bb9193607e4/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 10908,
+          "tamanhoTexto": 1413
+        }
+      },
+      {
+        "sequencia": 17,
+        "dataHoraJuntada": "2025-02-25T16:58:33.549",
+        "idCodex": 23967419118,
+        "idOrigem": "355417489",
+        "nome": "09594212624_Histórico de Créditos.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Laudo Pericial",
+          "idCodex": 120351,
+          "idOrigem": "31"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/3654ea63-bf85-53b8-a6e5-931ea0a27d64/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/3654ea63-bf85-53b8-a6e5-931ea0a27d64/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 57615,
+          "tamanhoTexto": 3750
+        }
+      },
+      {
+        "sequencia": 16,
+        "dataHoraJuntada": "2025-02-25T16:58:22.601",
+        "idCodex": 23967419117,
+        "idOrigem": "355417482",
+        "nome": "09594212624_Extrato CNIS.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Laudo Pericial",
+          "idCodex": 120351,
+          "idOrigem": "31"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/be1032e7-52ed-58a0-940f-064281a6ea67/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/be1032e7-52ed-58a0-940f-064281a6ea67/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 21332,
+          "tamanhoTexto": 8668
+        }
+      },
+      {
+        "sequencia": 15,
+        "dataHoraJuntada": "2025-02-25T16:58:11.57",
+        "idCodex": 23967419116,
+        "idOrigem": "355417476",
+        "nome": "09594212624_Declaração de Benefícios.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Laudo Pericial",
+          "idCodex": 120351,
+          "idOrigem": "31"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/22a8d9d6-8009-5b6e-9292-0a61b2c90564/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/22a8d9d6-8009-5b6e-9292-0a61b2c90564/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 47592,
+          "tamanhoTexto": 743
+        }
+      },
+      {
+        "sequencia": 14,
+        "dataHoraJuntada": "2025-02-25T16:58:02.44",
+        "idCodex": 23967419115,
+        "idOrigem": "355417469",
+        "nome": "09594212624_Quadro Resumo Dossiê Previdenciário.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Laudo Pericial",
+          "idCodex": 120351,
+          "idOrigem": "31"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/6812bf09-c049-5e4d-be70-a950db0448dc/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/6812bf09-c049-5e4d-be70-a950db0448dc/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 61955,
+          "tamanhoTexto": 1850
+        }
+      },
+      {
+        "sequencia": 13,
+        "dataHoraJuntada": "2025-02-24T16:50:20.647",
+        "idCodex": 23944541555,
+        "idOrigem": "355223434",
+        "nome": "Ato Ordinatório.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 14575,
+          "nome": "Ato Ordinatório",
+          "idCodex": 124301,
+          "idOrigem": "150"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/841cf80a-bed5-59c7-abf0-f0a9c7f628c9/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/841cf80a-bed5-59c7-abf0-f0a9c7f628c9/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 12518,
+          "tamanhoTexto": 896
+        }
+      },
+      {
+        "sequencia": 12,
+        "dataHoraJuntada": "2025-02-24T16:50:14.86",
+        "idCodex": 23944540575,
+        "idOrigem": "355223430",
+        "nome": "Informação de Irregularidade.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Informação de Irregularidade",
+          "idCodex": 129001,
+          "idOrigem": "279"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/12d4b28d-8d95-52b5-a02b-7e23ae3d3822/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/12d4b28d-8d95-52b5-a02b-7e23ae3d3822/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 56799,
+          "tamanhoTexto": 8499
+        }
+      },
+      {
+        "sequencia": 11,
+        "dataHoraJuntada": "2025-01-31T10:05:57.723",
+        "idCodex": 23685733516,
+        "idOrigem": "352294722",
+        "nome": "Certidão.html",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 402,
+          "nome": "Certidão",
+          "idCodex": 121201,
+          "idOrigem": "57"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/3e2a1e90-52f2-5ba3-95c7-09d9f91379bd/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/3e2a1e90-52f2-5ba3-95c7-09d9f91379bd/texto",
+        "arquivo": {
+          "tipo": "text/html",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 14060,
+          "tamanhoTexto": 891
+        }
+      },
+      {
+        "sequencia": 10,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888983,
+        "idOrigem": "352173582",
+        "nome": "5.2 CARTA DE CONCESSAO 06.2017.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/493d88f7-8e49-5ca6-a37d-1571e683593e/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/493d88f7-8e49-5ca6-a37d-1571e683593e/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 345969,
+          "tamanhoTexto": 5500
+        }
+      },
+      {
+        "sequencia": 9,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888982,
+        "idOrigem": "352173568",
+        "nome": "Relatorio-Valor-Causa-ADEMILSON DIAS COSTA-30-01-2025.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/d38a5b20-7258-5d86-b790-944c824b4584/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/d38a5b20-7258-5d86-b790-944c824b4584/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 137347,
+          "tamanhoTexto": 5748
+        }
+      },
+      {
+        "sequencia": 8,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888981,
+        "idOrigem": "352173567",
+        "nome": "5.3 LAUDO PERICIAL.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/255d895b-9550-52a6-a1fc-656a47ba3597/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/255d895b-9550-52a6-a1fc-656a47ba3597/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 412500,
+          "tamanhoTexto": 5606
+        }
+      },
+      {
+        "sequencia": 7,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888980,
+        "idOrigem": "352173564",
+        "nome": "5.2 CARTA DE CONCESSAO 06.2017.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/943c1e64-787e-585c-b55e-eacf0e942e90/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/943c1e64-787e-585c-b55e-eacf0e942e90/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 345969,
+          "tamanhoTexto": 5500
+        }
+      },
+      {
+        "sequencia": 6,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888979,
+        "idOrigem": "352173562",
+        "nome": "5.1 EXTRATO CNIS.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/f838345f-0c01-527f-aedb-ed4184292833/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/f838345f-0c01-527f-aedb-ed4184292833/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 374171,
+          "tamanhoTexto": 10460
+        }
+      },
+      {
+        "sequencia": 5,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888978,
+        "idOrigem": "352173561",
+        "nome": "5. CTPS.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/387d9ff3-2147-55f4-a9f7-80623d6c66c7/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/387d9ff3-2147-55f4-a9f7-80623d6c66c7/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 87813,
+          "tamanhoTexto": 6882
+        }
+      },
+      {
+        "sequencia": 4,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888977,
+        "idOrigem": "352173560",
+        "nome": "2. COMPROVANTE DE RESIDENCIA.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 106,
+          "nome": "Outros Documentos",
+          "idCodex": 124901,
+          "idOrigem": "166"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/8a9d6690-0448-5d2e-87b6-6628f9712dd2/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/8a9d6690-0448-5d2e-87b6-6628f9712dd2/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 1241713,
+          "tamanhoTexto": 1637
+        }
+      },
+      {
+        "sequencia": 3,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888976,
+        "idOrigem": "352173558",
+        "nome": "1. RG.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Documento de Identificação",
+          "idCodex": 121051,
+          "idOrigem": "52"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/4c999c37-5e71-5343-ba3c-256c502c5fad/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/4c999c37-5e71-5343-ba3c-256c502c5fad/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 105078,
+          "tamanhoTexto": 2
+        }
+      },
+      {
+        "sequencia": 2,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888975,
+        "idOrigem": "352173557",
+        "nome": "0.1 PROCURAÇÃO.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "nome": "Procuração/substabelecimento com reserva de poderes",
+          "idCodex": 129751,
+          "idOrigem": "298"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/b097776a-bf95-5f86-b613-909e557cf08b/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/b097776a-bf95-5f86-b613-909e557cf08b/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 478981,
+          "tamanhoTexto": 4580
+        }
+      },
+      {
+        "sequencia": 1,
+        "dataHoraJuntada": "2025-01-30T13:10:52.632",
+        "idCodex": 23675888974,
+        "idOrigem": "352172548",
+        "nome": "Petição inicial.pdf",
+        "nivelSigilo": "PUBLICO",
+        "tipo": {
+          "codigo": 202,
+          "nome": "Petição inicial",
+          "idCodex": 119551,
+          "idOrigem": "12"
+        },
+        "hrefBinario": "/processos/5000315-75.2025.4.03.6327/documentos/266683ef-f200-52d4-9172-19e3dc3c567d/binario",
+        "hrefTexto": "/processos/5000315-75.2025.4.03.6327/documentos/266683ef-f200-52d4-9172-19e3dc3c567d/texto",
+        "arquivo": {
+          "tipo": "application/pdf",
+          "quantidadePaginas": 0,
+          "quantidadeImagens": 0,
+          "tamanho": 279343,
+          "tamanhoTexto": 34414
+        }
+      }
+    ],
+    "permitePeticionar": true,
+    "processosRelacionados": [],
+    "idFonteDadosCodex": 430,
+    "ativo": true
+  },
+  "_metadata": {
+    "process_number": "5000315-75.2025.4.03.6327",
+    "data_type": "full",
+    "fetched_at": "2025-10-05T12:35:01.713562",
+    "source": "pdpj_api"
+  }
+}

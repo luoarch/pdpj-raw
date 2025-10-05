@@ -1,0 +1,142 @@
+[
+  {
+    "documento": "Petição inicial.pdf",
+    "sequencia": 1,
+    "tipo": "Petição inicial",
+    "tamanho_esperado": 279343,
+    "tipo_esperado": "application/pdf",
+    "href_binario": "/processos/5000315-75.2025.4.03.6327/documentos/266683ef-f200-52d4-9172-19e3dc3c567d/binario",
+    "href_texto": "/processos/5000315-75.2025.4.03.6327/documentos/266683ef-f200-52d4-9172-19e3dc3c567d/texto",
+    "url_binario": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/266683ef-f200-52d4-9172-19e3dc3c567d/binario",
+    "url_texto": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/266683ef-f200-52d4-9172-19e3dc3c567d/texto",
+    "download_binario": {
+      "success": false,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/01_Petição_inicial_pdf_binario.pdf",
+      "error": "HTML do portal web retornado",
+      "is_portal_html": true
+    },
+    "download_texto": {
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/01_Petição_inicial_pdf_texto.pdf",
+      "is_text": true
+    }
+  },
+  {
+    "documento": "0.1 PROCURAÇÃO.pdf",
+    "sequencia": 2,
+    "tipo": "Procuração/substabelecimento com reserva de poderes",
+    "tamanho_esperado": 478981,
+    "tipo_esperado": "application/pdf",
+    "href_binario": "/processos/5000315-75.2025.4.03.6327/documentos/b097776a-bf95-5f86-b613-909e557cf08b/binario",
+    "href_texto": "/processos/5000315-75.2025.4.03.6327/documentos/b097776a-bf95-5f86-b613-909e557cf08b/texto",
+    "url_binario": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/b097776a-bf95-5f86-b613-909e557cf08b/binario",
+    "url_texto": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/b097776a-bf95-5f86-b613-909e557cf08b/texto",
+    "download_binario": {
+      "success": false,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/02_0_1_PROCURAÇÃO_pdf_binario.pdf",
+      "error": "HTML do portal web retornado",
+      "is_portal_html": true
+    },
+    "download_texto": {
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/02_0_1_PROCURAÇÃO_pdf_texto.pdf",
+      "is_text": true
+    }
+  },
+  {
+    "documento": "1. RG.pdf",
+    "sequencia": 3,
+    "tipo": "Documento de Identificação",
+    "tamanho_esperado": 105078,
+    "tipo_esperado": "application/pdf",
+    "href_binario": "/processos/5000315-75.2025.4.03.6327/documentos/4c999c37-5e71-5343-ba3c-256c502c5fad/binario",
+    "href_texto": "/processos/5000315-75.2025.4.03.6327/documentos/4c999c37-5e71-5343-ba3c-256c502c5fad/texto",
+    "url_binario": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/4c999c37-5e71-5343-ba3c-256c502c5fad/binario",
+    "url_texto": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/4c999c37-5e71-5343-ba3c-256c502c5fad/texto",
+    "download_binario": {
+      "success": false,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/03_1__RG_pdf_binario.pdf",
+      "error": "HTML do portal web retornado",
+      "is_portal_html": true
+    },
+    "download_texto": {
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/03_1__RG_pdf_texto.pdf",
+      "is_text": true
+    }
+  },
+  {
+    "documento": "Pedido de Desistência.pdf",
+    "sequencia": 27,
+    "tipo": "Pedido de Desistência",
+    "tamanho_esperado": 49197,
+    "tipo_esperado": "application/pdf",
+    "href_binario": "/processos/5000315-75.2025.4.03.6327/documentos/bafbfdb2-ab94-5ca0-9cb3-b6e80376a632/binario",
+    "href_texto": "/processos/5000315-75.2025.4.03.6327/documentos/bafbfdb2-ab94-5ca0-9cb3-b6e80376a632/texto",
+    "url_binario": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/bafbfdb2-ab94-5ca0-9cb3-b6e80376a632/binario",
+    "url_texto": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/bafbfdb2-ab94-5ca0-9cb3-b6e80376a632/texto",
+    "download_binario": {
+      "success": false,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/27_Pedido_de_Desistência_pdf_binario.pdf",
+      "error": "HTML do portal web retornado",
+      "is_portal_html": true
+    },
+    "download_texto": {
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/27_Pedido_de_Desistência_pdf_texto.pdf",
+      "is_text": true
+    }
+  },
+  {
+    "documento": "Sentença.html",
+    "sequencia": 29,
+    "tipo": "Sentença",
+    "tamanho_esperado": 13257,
+    "tipo_esperado": "text/html",
+    "href_binario": "/processos/5000315-75.2025.4.03.6327/documentos/5e0131cb-2a0a-5f82-9d2c-4b74bc677824/binario",
+    "href_texto": "/processos/5000315-75.2025.4.03.6327/documentos/5e0131cb-2a0a-5f82-9d2c-4b74bc677824/texto",
+    "url_binario": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/5e0131cb-2a0a-5f82-9d2c-4b74bc677824/binario",
+    "url_texto": "https://portaldeservicos.pdpj.jus.br/processos/5000315-75.2025.4.03.6327/documentos/5e0131cb-2a0a-5f82-9d2c-4b74bc677824/texto",
+    "download_binario": {
+      "success": false,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/29_Sentença_html_binario.html",
+      "error": "HTML do portal web retornado",
+      "is_portal_html": true
+    },
+    "download_texto": {
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "file_saved": "data/robust_downloads/29_Sentença_html_texto.html",
+      "is_text": true
+    }
+  }
+]

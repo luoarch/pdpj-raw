@@ -1,0 +1,122 @@
+{
+  "total_documents": 30,
+  "successful_downloads": 10,
+  "failed_downloads": 0,
+  "file_types": {
+    ".html": 7,
+    ".pdf": 3
+  },
+  "total_size": 265884,
+  "downloads": [
+    {
+      "nome": "Certidão Trânsito em Julgado.html",
+      "tipo": "Certidão Trânsito em Julgado",
+      "size": 11291,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Certidão Trânsito em Julgado.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Sentença.html",
+      "tipo": "Sentença",
+      "size": 13257,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Sentença.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Sentença.html",
+      "tipo": "Sentença",
+      "size": 13257,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Sentença.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Pedido de Desistência.pdf",
+      "tipo": "Pedido de Desistência",
+      "size": 49197,
+      "extension": ".pdf",
+      "detected_type": "Detectado por assinatura: b'%PDF'",
+      "saved_path": "data/downloads/Pedido de Desistência.pdf",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Ato Ordinatório.html",
+      "tipo": "Ato Ordinatório",
+      "size": 11589,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Ato Ordinatório.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Ato Ordinatório.html",
+      "tipo": "Ato Ordinatório",
+      "size": 11589,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Ato Ordinatório.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Petição Intercorrente.pdf",
+      "tipo": "Petição Intercorrente",
+      "size": 50307,
+      "extension": ".pdf",
+      "detected_type": "Detectado por assinatura: b'%PDF'",
+      "saved_path": "data/downloads/Petição Intercorrente.pdf",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Ato Ordinatório.html",
+      "tipo": "Ato Ordinatório",
+      "size": 11589,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Ato Ordinatório.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Ato Ordinatório.html",
+      "tipo": "Ato Ordinatório",
+      "size": 11589,
+      "extension": ".html",
+      "detected_type": "Detectado como HTML pelo conteúdo",
+      "saved_path": "data/downloads/Ato Ordinatório.html",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    },
+    {
+      "nome": "Petição Intercorrente.pdf",
+      "tipo": "Petição Intercorrente",
+      "size": 82219,
+      "extension": ".pdf",
+      "detected_type": "Detectado por assinatura: b'%PDF'",
+      "saved_path": "data/downloads/Petição Intercorrente.pdf",
+      "warnings": [],
+      "errors": [],
+      "session_cookie_used": false
+    }
+  ]
+}

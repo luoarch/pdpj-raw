@@ -1,0 +1,33 @@
+# Exemplo de arquivo de override de configurações em YAML
+# Uso: Definir CONFIG_OVERRIDE_FILE=config-examples/override.yaml
+
+# Configurações de override
+log_level: DEBUG
+cache_ttl: 600
+rate_limit_requests: 2000
+enable_metrics: true
+metrics_protected: false
+
+# CORS para desenvolvimento
+cors_origins:
+  - "http://localhost:3000"
+  - "http://localhost:8080"
+  - "http://localhost:4200"
+
+# API personalizada
+api_title: "PDPJ API - Override Example"
+api_description: "API personalizada com configurações de override"
+
+# Configurações de performance
+max_concurrent_requests: 150
+max_concurrent_downloads: 75
+
+# Observabilidade
+enable_tracing: true
+tracing_sample_rate: 0.5
+tracing_service_name: "pdpj-api-override"
+
+# Logging
+log_request_id: true
+log_include_user_id: true
+log_include_trace_id: true

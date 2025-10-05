@@ -1,0 +1,98 @@
+[
+  {
+    "nome": "Petição Inicial",
+    "tipo": "Petição (Outras)",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Procuração",
+    "tipo": "Instrumento de Procuração",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/712e8ec4-3184-5a04-b653-0a185cade86f/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Contrato Social",
+    "tipo": "Contrato (Outros)",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/57724d78-0d83-52e2-bb87-2e414b8c293f/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Certidão de Matrícula",
+    "tipo": "Certidão",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/f27823c7-c74d-5c2d-a1e4-e0cef1e2910a/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Boletim de Ocorrência",
+    "tipo": "Boletim de Ocorrência",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/6cf98c78-81ff-5c94-bb26-aa66ea775c43/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Documento Diverso",
+    "tipo": "Documentos Diversos",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/407a1cdd-be6b-5484-a031-f1115b3072d1/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Decisão",
+    "tipo": "Decisão",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/950522d5-c2d2-5e9e-88d9-ed352b511e13/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  },
+  {
+    "nome": "Guia de Custas",
+    "tipo": "Guia",
+    "hrefBinario": "/processos/1000145-91.2023.8.26.0597/documentos/47a1eff9-3c65-58c0-80e8-a71a6d971319/binario",
+    "status_code": 200,
+    "content_type": "text/html",
+    "content_length": 2422,
+    "success": false,
+    "is_pdf": false,
+    "is_html": true,
+    "error": null
+  }
+]

@@ -1,0 +1,99 @@
+RESULTADOS DOS TESTES DE ENDPOINTS
+==================================================
+
+Endpoint: /processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/binario
+Status: 200
+Content-Type: text/html
+Tamanho: 2422 bytes
+É PDF: False
+É HTML: True
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/binario
+Status: 500
+Content-Type: application/json
+Tamanho: 504 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/binario
+Status: 404
+Content-Type: application/json
+Tamanho: 146 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------
+Endpoint: /processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf
+Status: 200
+Content-Type: text/html
+Tamanho: 2422 bytes
+É PDF: False
+É HTML: True
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf
+Status: 404
+Content-Type: application/json
+Tamanho: 174 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf
+Status: 404
+Content-Type: application/json
+Tamanho: 138 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------
+Endpoint: /processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/download
+Status: 200
+Content-Type: text/html
+Tamanho: 2422 bytes
+É PDF: False
+É HTML: True
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/download
+Status: 404
+Content-Type: application/json
+Tamanho: 183 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------
+Endpoint: /processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/arquivo
+Status: 200
+Content-Type: text/html
+Tamanho: 2422 bytes
+É PDF: False
+É HTML: True
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/arquivo
+Status: 404
+Content-Type: application/json
+Tamanho: 182 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------
+Endpoint: /processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/file
+Status: 200
+Content-Type: text/html
+Tamanho: 2422 bytes
+É PDF: False
+É HTML: True
+Sucesso: False
+------------------------------
+Endpoint: /api/v2/processos/1000145-91.2023.8.26.0597/documentos/a98a3080-bd47-5f84-83e6-4e24899a89cf/file
+Status: 404
+Content-Type: application/json
+Tamanho: 179 bytes
+É PDF: False
+É HTML: False
+Sucesso: False
+------------------------------

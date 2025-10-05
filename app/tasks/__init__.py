@@ -1,0 +1,1 @@
+"""Tarefas assíncronas com Celery."""

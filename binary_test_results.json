@@ -1,0 +1,127 @@
+{
+  "endpoint_tests": [
+    {
+      "name": "Endpoint binario original",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint binario com Accept específico",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint binario com Content-Type",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint alternativo /download",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/download",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint alternativo /file",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/file",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint alternativo /content",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/content",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint alternativo /raw",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/raw",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    },
+    {
+      "name": "Endpoint API v2 binario",
+      "url": "https://portaldeservicos.pdpj.jus.br/api/v2/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 401,
+      "content_type": "N/A",
+      "content_length": 0,
+      "is_pdf": false,
+      "is_html": false,
+      "is_json": false,
+      "is_binary": true,
+      "first_100_bytes": "empty"
+    },
+    {
+      "name": "Endpoint API v2 download",
+      "url": "https://portaldeservicos.pdpj.jus.br/api/v2/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/download",
+      "status_code": 401,
+      "content_type": "N/A",
+      "content_length": 0,
+      "is_pdf": false,
+      "is_html": false,
+      "is_json": false,
+      "is_binary": true,
+      "first_100_bytes": "empty"
+    },
+    {
+      "name": "Endpoint com Range header",
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false,
+      "first_100_bytes": "3c21444f43545950452068746d6c3e3c68746d6c206c616e673d2270742d6272223e3c686561643e0a202020203c6d65746120636861727365743d227574662d38223e0a202020203c7469746c653e506f7274616c206465205365727669c3a76f732064"
+    }
+  ],
+  "base64_test": {
+    "success": false
+  }
+}

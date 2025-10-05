@@ -1,0 +1,55 @@
+{
+  "teste_1_sucesso": false,
+  "teste_2_resultados": [
+    {
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false
+    },
+    {
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false
+    },
+    {
+      "url": "https://portaldeservicos.pdpj.jus.br/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/download",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length": 2422,
+      "is_pdf": false,
+      "is_html": true,
+      "is_json": false,
+      "is_binary": false
+    },
+    {
+      "url": "https://portaldeservicos.pdpj.jus.br/api/v2/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335",
+      "status_code": 404,
+      "content_type": "application/json",
+      "content_length": 174,
+      "is_pdf": false,
+      "is_html": false,
+      "is_json": true,
+      "is_binary": false
+    },
+    {
+      "url": "https://portaldeservicos.pdpj.jus.br/api/v2/processos/1000145-91.2023.8.26.0597/documentos/ea480b7f-fac4-5c2c-a46f-c5d36f5d4335/binario",
+      "status_code": 500,
+      "content_type": "application/json",
+      "content_length": 504,
+      "is_pdf": false,
+      "is_html": false,
+      "is_json": true,
+      "is_binary": false
+    }
+  ]
+}
