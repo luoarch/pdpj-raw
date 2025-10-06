@@ -27,7 +27,8 @@ from app.schemas.process import (
     ProcessResponse,
     ProcessFilesResponse,
 )
-from app.models import Process, User, Document
+from app.schemas.process_status import ProcessStatusResponse, DocumentStatusResponse
+from app.models import Process, User, Document, DocumentStatus, ProcessJob, JobStatus
 from app.services.pdpj_client import pdpj_client, PDPJClientError
 from app.services.session_manager import get_active_session_cookie
 from app.services.process_cache_service import process_cache_service
@@ -461,6 +462,133 @@ async def get_process_files(
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Erro ao buscar arquivos: {str(e)}"
+        )
+
+
+@router.get("/{process_number}/status", response_model=ProcessStatusResponse)
+async def get_process_status(
+    process_number: str,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(require_user_or_admin())
+):
+    """Obter status de processamento de um processo com progresso em tempo real."""
+    try:
+        logger.info(f"📊 Buscando status do processo: {process_number}")
+        
+        # Buscar processo
+        normalized_number = normalize_process_number(process_number)
+        result = await db.execute(
+            select(Process)
+            .where(Process.process_number == normalized_number)
+            .options(selectinload(Process.documents), selectinload(Process.jobs))
+        )
+        process = result.scalar_one_or_none()
+        
+        if not process:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Processo {process_number} não encontrado"
+            )
+        
+        # Buscar job mais recente
+        latest_job = process.jobs[-1] if process.jobs else None
+        
+        # Contar documentos por status
+        total_docs = len(process.documents)
+        completed = sum(1 for d in process.documents if hasattr(d, 'status') and d.status == DocumentStatus.AVAILABLE.value)
+        failed = sum(1 for d in process.documents if hasattr(d, 'status') and d.status == DocumentStatus.FAILED.value)
+        processing = sum(1 for d in process.documents if hasattr(d, 'status') and d.status == DocumentStatus.PROCESSING.value)
+        pending = sum(1 for d in process.documents if hasattr(d, 'status') and d.status == DocumentStatus.PENDING.value)
+        
+        # Se não tem campo status (documentos antigos), usar flag downloaded
+        if not any(hasattr(d, 'status') for d in process.documents):
+            completed = sum(1 for d in process.documents if d.downloaded)
+            pending = total_docs - completed
+            processing = 0
+            failed = 0
+        
+        # Status geral do processo
+        if failed == total_docs and total_docs > 0:
+            overall_status = "failed"
+        elif completed == total_docs and total_docs > 0:
+            overall_status = "completed"
+        elif processing > 0 or (latest_job and latest_job.status == JobStatus.PROCESSING.value):
+            overall_status = "processing"
+        else:
+            overall_status = "pending"
+        
+        # Progresso
+        progress = (completed / total_docs * 100) if total_docs > 0 else 0
+        
+        logger.info(f"📊 Status: {overall_status}, Progresso: {progress:.1f}% ({completed}/{total_docs})")
+        
+        # Montar documentos com status
+        documents_status = []
+        for doc in process.documents:
+            # Extrair UUID do hrefBinario
+            doc_uuid = doc.document_id
+            if doc.raw_data and doc.raw_data.get("hrefBinario"):
+                href = doc.raw_data.get("hrefBinario", "")
+                parts = href.split("/documentos/")
+                if len(parts) == 2:
+                    uuid_part = parts[1].split("/")[0]
+                    if "-" in uuid_part:
+                        doc_uuid = uuid_part
+            
+            # Status do documento
+            doc_status = doc.status if hasattr(doc, 'status') else ("available" if doc.downloaded else "pending")
+            
+            doc_data = DocumentStatusResponse(
+                id=doc.document_id,
+                uuid=doc_uuid,
+                name=doc.name or "Documento sem nome",
+                status=doc_status,
+                size=doc.size,
+                mime_type=doc.mime_type,
+                download_url=None,
+                error_message=doc.error_message if hasattr(doc, 'error_message') else None,
+                download_started_at=doc.download_started_at if hasattr(doc, 'download_started_at') else None,
+                download_completed_at=doc.download_completed_at if hasattr(doc, 'download_completed_at') else None
+            )
+            
+            # Se disponível, gerar URL presignada
+            if doc.downloaded and doc.s3_key:
+                try:
+                    doc_data.download_url = await s3_service.generate_presigned_url(
+                        doc.s3_key, expiration=3600
+                    )
+                except Exception as e:
+                    logger.warning(f"⚠️ Erro ao gerar URL presignada: {e}")
+                    doc_data.error_message = f"Erro ao gerar URL: {str(e)}"
+            
+            documents_status.append(doc_data)
+        
+        return ProcessStatusResponse(
+            process_number=process_number,
+            status=overall_status,
+            total_documents=total_docs,
+            completed_documents=completed,
+            failed_documents=failed,
+            pending_documents=pending,
+            processing_documents=processing,
+            progress_percentage=progress,
+            documents=documents_status,
+            job_id=latest_job.job_id if latest_job else None,
+            webhook_url=latest_job.webhook_url if latest_job else None,
+            webhook_sent=latest_job.webhook_sent if latest_job else False,
+            webhook_sent_at=latest_job.webhook_sent_at if latest_job else None,
+            created_at=latest_job.created_at if latest_job else None,
+            started_at=latest_job.started_at if latest_job else None,
+            completed_at=latest_job.completed_at if latest_job else None
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Erro ao buscar status: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Erro ao buscar status: {str(e)}"
         )
 
 
