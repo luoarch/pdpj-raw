@@ -14,6 +14,15 @@ Interface moderna e responsiva para o PDPJ API Enterprise Edition v2.0, constru�
 - **Design responsivo** e acessível
 - **Tema escuro/claro** automático
 
+## ⭐ NOVOS RECURSOS (v2.0)
+
+- ✅ **Download Assíncrono** - Downloads em background via Celery
+- ✅ **Webhooks** - Notificações automáticas quando downloads concluírem
+- ✅ **Status em Tempo Real** - Progresso 0-100% com polling automático
+- ✅ **Gerenciamento de Downloads** - Página dedicada para acompanhar downloads
+- ✅ **Configuração de Webhooks** - Configure URLs de callback no perfil
+- ✅ **API Client Completo** - 7 novos endpoints integrados
+
 ## 📁 Estrutura do Projeto
 
 ```

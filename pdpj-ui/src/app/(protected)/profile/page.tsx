@@ -242,6 +242,57 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
+          {/* Webhook Configuration */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Settings className="h-5 w-5 mr-2" />
+                Configuração de Webhooks
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  URL Padrão para Webhooks
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="url"
+                    placeholder="https://myapp.com/webhook/callback"
+                    className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  />
+                  <Button variant="outline">
+                    Salvar
+                  </Button>
+                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  Configure uma URL padrão para receber notificações quando os downloads forem concluídos.
+                </p>
+              </div>
+
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
+                  Sobre Webhooks
+                </h4>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                  <li>• A URL deve usar HTTPS em produção</li>
+                  <li>• Seu servidor deve retornar HTTP 2xx para confirmar recebimento</li>
+                  <li>• O sistema fará até 3 tentativas de envio com retry automático</li>
+                  <li>• O payload incluirá todos os documentos com links S3</li>
+                </ul>
+              </div>
+
+              <div className="flex gap-2">
+                <Button variant="outline" className="flex-1">
+                  Testar Conectividade
+                </Button>
+                <Button variant="outline" className="flex-1">
+                  Ver Histórico
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Actions */}
           <Card>
             <CardHeader>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 import { Search, Download, Eye, FileText } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/atoms/card';
 import { Button } from '@/components/atoms/button';
@@ -9,11 +10,16 @@ import { Input } from '@/components/atoms/input';
 import { Badge } from '@/components/atoms/badge';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { apiClient, Process } from '@/lib/api-client';
+import { useDownloadsStore } from '@/store/downloads-store';
+import { useAppStore } from '@/store/app-store';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 export default function SearchPage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const { startDownload, isDownloading } = useDownloadsStore();
+  const { addNotification } = useAppStore();
 
   const { data: searchResults, isLoading, error, refetch } = useQuery({
     queryKey: ['search', searchQuery],
@@ -222,14 +228,51 @@ export default function SearchPage() {
 
                     {/* Ações */}
                     <div className="flex gap-2">
-                      <Button variant="outline" size="sm">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => router.push(`/processes/${process.process_number}`)}
+                      >
                         <Eye className="h-4 w-4 mr-2" />
                         Visualizar
                       </Button>
                       {process.documents_count && process.documents_count > 0 && (
-                        <Button variant="outline" size="sm">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={async () => {
+                            if (isDownloading(process.process_number)) {
+                              addNotification({
+                                type: 'warning',
+                                title: 'Download em Andamento',
+                                message: 'Este processo já está sendo baixado.',
+                              });
+                              return;
+                            }
+
+                            try {
+                              await apiClient.getProcessWithAutoDownload(process.process_number, true);
+                              startDownload(process.process_number, process.id);
+
+                              addNotification({
+                                type: 'success',
+                                title: 'Download Iniciado',
+                                message: `Download de ${process.documents_count} documento(s) iniciado.`,
+                              });
+
+                              // Redirecionar para página de downloads
+                              router.push('/downloads');
+                            } catch (error) {
+                              addNotification({
+                                type: 'error',
+                                title: 'Erro ao Iniciar Download',
+                                message: error instanceof Error ? error.message : 'Erro desconhecido',
+                              });
+                            }
+                          }}
+                        >
                           <Download className="h-4 w-4 mr-2" />
-                          Download
+                          Download Assíncrono
                         </Button>
                       )}
                     </div>

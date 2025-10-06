@@ -45,6 +45,13 @@
 			"type": "default"
 		},
 		{
+			"key": "test_webhook_url",
+			"value": "http://localhost:8000/api/v1/webhooks/webhook-test-receiver",
+			"description": "URL de webhook de teste para callbacks",
+			"enabled": true,
+			"type": "default"
+		},
+		{
 			"key": "pdpj_api_base_url",
 			"value": "https://portaldeservicos.pdpj.jus.br",
 			"description": "URL base da API PDPJ oficial",
@@ -151,6 +158,6 @@
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2025-10-05T17:35:00.000Z",
+	"_postman_exported_at": "2025-10-06T12:00:00.000Z",
 	"_postman_exported_using": "Postman/10.0.0"
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Script para testar todos os endpoints da API PDPJ conforme definido na collection.
+Versão atualizada com endpoints de async downloads e webhooks.
 """
 
 import asyncio
@@ -17,6 +18,7 @@ API_TOKENS = {
     "admin": "pdpj_admin_xYlOkmPaK9oO0xe_BdhoGBZvALr7YuHKI0gTgePAbZU"
 }
 TEST_PROCESS_NUMBER = "10001459120238260597"
+TEST_WEBHOOK_URL = f"{BASE_URL}/api/v1/webhooks/webhook-test-receiver"
 
 class EndpointTester:
     """Classe para testar todos os endpoints da API."""
@@ -77,7 +79,8 @@ class EndpointTester:
             except:
                 result["text_response"] = response.text[:500]  # Primeiros 500 chars
             
-            logger.info(f"✅ {name}: {response.status_code} ({response_time:.3f}s)")
+            status_icon = "✅" if result["success"] else "❌"
+            logger.info(f"{status_icon} {name}: {response.status_code} ({response_time:.3f}s)")
             return result
             
         except Exception as e:
@@ -106,6 +109,30 @@ class EndpointTester:
         for name, method, url in endpoints:
             result = await self.test_endpoint(name, method, url)
             self.results.append(result)
+    
+    async def test_authentication_endpoints(self):
+        """Testar endpoints de autenticação."""
+        logger.info("🔐 Testando Authentication endpoints...")
+        
+        # Teste sem autenticação (deve retornar 401)
+        result = await self.test_endpoint(
+            "Sem Autenticação", 
+            "GET", 
+            f"{BASE_URL}/api/v1/processes", 
+            expected_status=401
+        )
+        self.results.append(result)
+        
+        # Teste com token inválido
+        invalid_headers = {"Authorization": "Bearer invalid_token"}
+        result = await self.test_endpoint(
+            "Token Inválido", 
+            "GET", 
+            f"{BASE_URL}/api/v1/processes", 
+            invalid_headers,
+            expected_status=401
+        )
+        self.results.append(result)
     
     async def test_user_endpoints(self):
         """Testar endpoints de usuários."""
@@ -167,7 +194,110 @@ class EndpointTester:
             "POST", 
             f"{BASE_URL}/api/v1/processes/{TEST_PROCESS_NUMBER}/download-documents", 
             headers,
-            expected_status=200  # Mudando para 200 pois pode retornar sucesso imediato
+            expected_status=200
+        )
+        self.results.append(result)
+    
+    async def test_async_download_endpoints(self):
+        """Testar endpoints de download assíncrono."""
+        logger.info("🔄 Testando Async Downloads & Status endpoints...")
+        
+        headers = self.get_headers("test")
+        
+        # Teste 1: Get Process with Auto Download
+        result = await self.test_endpoint(
+            "Get Process with Auto Download",
+            "GET",
+            f"{BASE_URL}/api/v1/processes/{TEST_PROCESS_NUMBER}?auto_download=true",
+            headers
+        )
+        self.results.append(result)
+        
+        # Teste 2: Get Process with Webhook
+        result = await self.test_endpoint(
+            "Get Process with Webhook",
+            "GET",
+            f"{BASE_URL}/api/v1/processes/{TEST_PROCESS_NUMBER}?auto_download=true&webhook_url={TEST_WEBHOOK_URL}",
+            headers
+        )
+        self.results.append(result)
+        
+        # Aguardar um pouco para o processamento começar
+        await asyncio.sleep(2)
+        
+        # Teste 3: Get Process Status
+        result = await self.test_endpoint(
+            "Get Process Status",
+            "GET",
+            f"{BASE_URL}/api/v1/processes/{TEST_PROCESS_NUMBER}/status",
+            headers
+        )
+        self.results.append(result)
+    
+    async def test_webhook_endpoints(self):
+        """Testar endpoints de webhooks."""
+        logger.info("🔗 Testando Webhook endpoints...")
+        
+        headers = self.get_headers("test")
+        
+        # Teste 1: Validate Webhook URL
+        validate_data = {
+            "webhook_url": TEST_WEBHOOK_URL
+        }
+        result = await self.test_endpoint(
+            "Validate Webhook URL",
+            "POST",
+            f"{BASE_URL}/api/v1/webhooks/webhook-validate",
+            headers,
+            validate_data
+        )
+        self.results.append(result)
+        
+        # Teste 2: Test Webhook Connectivity
+        connectivity_data = {
+            "webhook_url": TEST_WEBHOOK_URL
+        }
+        result = await self.test_endpoint(
+            "Test Webhook Connectivity",
+            "POST",
+            f"{BASE_URL}/api/v1/webhooks/webhook-test-connectivity",
+            headers,
+            connectivity_data
+        )
+        self.results.append(result)
+        
+        # Teste 3: Send Test Webhook
+        send_test_data = {
+            "webhook_url": TEST_WEBHOOK_URL,
+            "test_payload": {
+                "test": True,
+                "message": "Webhook de teste"
+            }
+        }
+        result = await self.test_endpoint(
+            "Send Test Webhook",
+            "POST",
+            f"{BASE_URL}/api/v1/webhooks/webhook-send-test",
+            headers,
+            send_test_data
+        )
+        self.results.append(result)
+        
+        # Teste 4: Webhook Test Receiver
+        receiver_data = {
+            "test": True,
+            "process_number": "1000145-91.2023.8.26.0597",
+            "status": "completed",
+            "total_documents": 10,
+            "completed_documents": 10,
+            "failed_documents": 0
+        }
+        result = await self.test_endpoint(
+            "Webhook Test Receiver",
+            "POST",
+            f"{BASE_URL}/api/v1/webhooks/webhook-test-receiver",
+            {},  # Sem autenticação
+            receiver_data
         )
         self.results.append(result)
     
@@ -188,33 +318,12 @@ class EndpointTester:
             result = await self.test_endpoint(name, method, url, h)
             self.results.append(result)
     
-    async def test_authentication_endpoints(self):
-        """Testar endpoints de autenticação."""
-        logger.info("🔐 Testando Authentication endpoints...")
-        
-        # Teste sem autenticação (deve retornar 401)
-        result = await self.test_endpoint(
-            "Sem Autenticação", 
-            "GET", 
-            f"{BASE_URL}/api/v1/processes", 
-            expected_status=401
-        )
-        self.results.append(result)
-        
-        # Teste com token inválido
-        invalid_headers = {"Authorization": "Bearer invalid_token"}
-        result = await self.test_endpoint(
-            "Token Inválido", 
-            "GET", 
-            f"{BASE_URL}/api/v1/processes", 
-            invalid_headers,
-            expected_status=401
-        )
-        self.results.append(result)
-    
     async def run_all_tests(self):
         """Executar todos os testes."""
-        logger.info("🚀 Iniciando testes de todos os endpoints...")
+        logger.info("=" * 60)
+        logger.info("🚀 INICIANDO TESTES DE TODOS OS ENDPOINTS")
+        logger.info("📋 API PDPJ Enterprise Edition v2.0")
+        logger.info("=" * 60)
         
         start_time = time.time()
         
@@ -224,6 +333,8 @@ class EndpointTester:
         await self.test_user_endpoints()
         await self.test_process_endpoints()
         await self.test_document_endpoints()
+        await self.test_async_download_endpoints()
+        await self.test_webhook_endpoints()
         await self.test_monitoring_endpoints()
         
         total_time = time.time() - start_time
@@ -233,7 +344,10 @@ class EndpointTester:
     
     def generate_report(self, total_time: float):
         """Gerar relatório dos testes."""
-        logger.info("📊 Gerando relatório...")
+        logger.info("")
+        logger.info("=" * 60)
+        logger.info("📊 GERANDO RELATÓRIO DE TESTES")
+        logger.info("=" * 60)
         
         total_tests = len(self.results)
         successful_tests = sum(1 for r in self.results if r["success"])
@@ -265,27 +379,38 @@ class EndpointTester:
             json.dump(report, f, indent=2, ensure_ascii=False)
         
         # Exibir resumo
+        logger.info("")
         logger.info("=" * 60)
-        logger.info("📊 RELATÓRIO DE TESTES DE ENDPOINTS")
+        logger.info("📊 RELATÓRIO FINAL DE TESTES DE ENDPOINTS")
         logger.info("=" * 60)
-        logger.info(f"Total de testes: {total_tests}")
-        logger.info(f"Testes bem-sucedidos: {successful_tests}")
-        logger.info(f"Testes falharam: {failed_tests}")
-        logger.info(f"Taxa de sucesso: {report['summary']['success_rate']}%")
-        logger.info(f"Tempo total: {total_time:.3f}s")
-        logger.info(f"Tempo médio de resposta: {avg_response_time:.3f}s")
-        logger.info(f"Tempo máximo de resposta: {max_response_time:.3f}s")
-        logger.info(f"Tempo mínimo de resposta: {min_response_time:.3f}s")
+        logger.info(f"📝 Total de testes: {total_tests}")
+        logger.info(f"✅ Testes bem-sucedidos: {successful_tests}")
+        logger.info(f"❌ Testes falharam: {failed_tests}")
+        logger.info(f"📈 Taxa de sucesso: {report['summary']['success_rate']}%")
+        logger.info(f"⏱️  Tempo total: {total_time:.3f}s")
+        logger.info(f"⚡ Tempo médio de resposta: {avg_response_time:.3f}s")
+        logger.info(f"🔺 Tempo máximo de resposta: {max_response_time:.3f}s")
+        logger.info(f"🔻 Tempo mínimo de resposta: {min_response_time:.3f}s")
         logger.info("=" * 60)
         
         # Exibir falhas
         if failed_tests > 0:
+            logger.warning("")
             logger.warning("❌ TESTES QUE FALHARAM:")
+            logger.warning("=" * 60)
             for result in self.results:
                 if not result["success"]:
-                    logger.warning(f"  - {result['name']}: {result.get('error', 'Status code incorreto')}")
+                    error_msg = result.get('error', f"Status code {result.get('status_code')} (esperado 200)")
+                    logger.warning(f"  ❌ {result['name']}: {error_msg}")
+            logger.warning("=" * 60)
+        else:
+            logger.success("")
+            logger.success("🎉🎊 TODOS OS TESTES PASSARAM COM SUCESSO! 🎊🎉")
+            logger.success("=" * 60)
         
+        logger.info("")
         logger.info("📄 Relatório detalhado salvo em: endpoint_test_report.json")
+        logger.info("")
 
 async def main():
     """Função principal."""
