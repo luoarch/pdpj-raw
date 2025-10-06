@@ -4,10 +4,10 @@
     "successful_tests": 15,
     "failed_tests": 0,
     "success_rate": 100.0,
-    "total_time": 1.607,
-    "avg_response_time": 0.107,
-    "max_response_time": 0.673,
-    "min_response_time": 0.003
+    "total_time": 1.57,
+    "avg_response_time": 0.104,
+    "max_response_time": 0.661,
+    "min_response_time": 0.002
   },
   "results": [
     {
@@ -15,17 +15,17 @@
       "method": "GET",
       "url": "http://localhost:8000/health",
       "status_code": 200,
-      "response_time": 0.016,
+      "response_time": 0.025,
       "success": true,
       "content_type": "application/json",
       "content_length": 194,
       "json_response": {
         "status": "healthy",
         "environment": "development",
-        "timestamp": "2025-10-05T17:35:41.473439",
-        "request_id": "4b3ae434-c4f9-47cf-b4bb-34a9af94047c",
+        "timestamp": "2025-10-06T00:23:26.897810",
+        "request_id": "7985706e-40e4-43e0-81e9-b80e58a4af44",
         "version": "2.0.0",
-        "uptime_seconds": 35.53488636016846
+        "uptime_seconds": 7.749269962310791
       }
     },
     {
@@ -33,7 +33,7 @@
       "method": "GET",
       "url": "http://localhost:8000/",
       "status_code": 200,
-      "response_time": 0.003,
+      "response_time": 0.002,
       "success": true,
       "content_type": "application/json",
       "content_length": 392,
@@ -41,12 +41,12 @@
         "message": "PDPJ Process API - Ultra-Fast Edition",
         "version": "2.0.0",
         "environment": "development",
-        "timestamp": "2025-10-05T17:35:41.477788",
-        "request_id": "2d14d671-8312-4dcc-b92d-7cf9db7dc63e",
+        "timestamp": "2025-10-06T00:23:26.900190",
+        "request_id": "251447c6-25b6-42ad-b98e-de36c339129a",
         "docs_url": "/docs",
         "monitoring_url": null,
         "status": "healthy",
-        "uptime_seconds": 33.00618314743042,
+        "uptime_seconds": 7.019100189208984,
         "python_version": "3.12.6 (v3.12.6:a4a2d2b0d85, Sep  6 2024, 16:08:03) [Clang 13.0.0 (clang-1300.0.29.30)]"
       }
     },
@@ -55,7 +55,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/processes",
       "status_code": 401,
-      "response_time": 0.01,
+      "response_time": 0.008,
       "success": true,
       "content_type": "application/json",
       "content_length": 36,
@@ -68,7 +68,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/processes",
       "status_code": 401,
-      "response_time": 0.016,
+      "response_time": 0.119,
       "success": true,
       "content_type": "application/json",
       "content_length": 30,
@@ -81,7 +81,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/users",
       "status_code": 200,
-      "response_time": 0.026,
+      "response_time": 0.021,
       "success": true,
       "content_type": "application/json",
       "content_length": 524,
@@ -94,8 +94,8 @@
           "rate_limit_requests": 100,
           "rate_limit_window": 60,
           "created_at": "2025-10-04T15:22:49.684294",
-          "updated_at": "2025-10-05T17:27:59.214598",
-          "last_access": "2025-10-05T17:27:59.213470",
+          "updated_at": "2025-10-05T23:49:44.329881",
+          "last_access": "2025-10-05T23:49:44.329745",
           "active": true
         },
         {
@@ -106,8 +106,8 @@
           "rate_limit_requests": 1000,
           "rate_limit_window": 60,
           "created_at": "2025-10-04T15:22:49.672948",
-          "updated_at": "2025-10-05T17:35:41.512939",
-          "last_access": "2025-10-05T17:35:41.511938",
+          "updated_at": "2025-10-06T00:23:27.033159",
+          "last_access": "2025-10-06T00:23:27.031561",
           "active": true
         }
       ]
@@ -117,7 +117,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/users/me",
       "status_code": 200,
-      "response_time": 0.009,
+      "response_time": 0.008,
       "success": true,
       "content_type": "application/json",
       "content_length": 260,
@@ -129,8 +129,8 @@
         "rate_limit_requests": 1000,
         "rate_limit_window": 60,
         "created_at": "2025-10-04T15:22:49.672948",
-        "updated_at": "2025-10-05T17:35:41.536871",
-        "last_access": "2025-10-05T17:35:41.536325",
+        "updated_at": "2025-10-06T00:23:27.054813",
+        "last_access": "2025-10-06T00:23:27.054522",
         "active": true
       }
     },
@@ -139,7 +139,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/processes",
       "status_code": 200,
-      "response_time": 0.03,
+      "response_time": 0.024,
       "success": true,
       "content_type": "application/json",
       "content_length": 187538,
@@ -151,8 +151,8 @@
           "status": null,
           "id": 1,
           "created_at": "2025-10-04T15:48:52.609623",
-          "updated_at": "2025-10-05T17:35:19.847074",
-          "last_consultation": "2025-10-04T15:52:06.885577",
+          "updated_at": "2025-10-05T23:49:44.818542",
+          "last_consultation": "2025-10-05T23:31:57.056510",
           "has_documents": true,
           "documents_downloaded": false,
           "full_data": {
@@ -6955,7 +6955,7 @@
             "_metadata": {
               "process_number": "10001459120238260597",
               "data_type": "full",
-              "fetched_at": "2025-10-04T15:52:06.878188",
+              "fetched_at": "2025-10-05T23:31:57.056207",
               "source": "pdpj_api"
             }
           }
@@ -6967,7 +6967,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/processes/10001459120238260597",
       "status_code": 200,
-      "response_time": 0.02,
+      "response_time": 0.017,
       "success": true,
       "content_type": "application/json",
       "content_length": 187536,
@@ -6978,8 +6978,8 @@
         "status": null,
         "id": 1,
         "created_at": "2025-10-04T15:48:52.609623",
-        "updated_at": "2025-10-05T17:35:19.847074",
-        "last_consultation": "2025-10-04T15:52:06.885577",
+        "updated_at": "2025-10-05T23:49:44.818542",
+        "last_consultation": "2025-10-05T23:31:57.056510",
         "has_documents": true,
         "documents_downloaded": false,
         "full_data": {
@@ -13782,7 +13782,7 @@
           "_metadata": {
             "process_number": "10001459120238260597",
             "data_type": "full",
-            "fetched_at": "2025-10-04T15:52:06.878188",
+            "fetched_at": "2025-10-05T23:31:57.056207",
             "source": "pdpj_api"
           }
         }
@@ -13793,7 +13793,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/processes/10001459120238260597/files",
       "status_code": 200,
-      "response_time": 0.031,
+      "response_time": 0.028,
       "success": true,
       "content_type": "application/json",
       "content_length": 9644,
@@ -14310,7 +14310,7 @@
       "method": "POST",
       "url": "http://localhost:8000/api/v1/processes/search",
       "status_code": 200,
-      "response_time": 0.528,
+      "response_time": 0.63,
       "success": true,
       "content_type": "application/json",
       "content_length": 187613,
@@ -14326,8 +14326,8 @@
             "status": null,
             "id": 1,
             "created_at": "2025-10-04T15:48:52.609623",
-            "updated_at": "2025-10-05T17:35:19.847074",
-            "last_consultation": "2025-10-04T15:52:06.885577",
+            "updated_at": "2025-10-05T23:49:44.818542",
+            "last_consultation": "2025-10-05T23:31:57.056510",
             "has_documents": true,
             "documents_downloaded": false,
             "full_data": {
@@ -21130,7 +21130,7 @@
               "_metadata": {
                 "process_number": "10001459120238260597",
                 "data_type": "full",
-                "fetched_at": "2025-10-04T15:52:06.878188",
+                "fetched_at": "2025-10-05T23:31:57.056207",
                 "source": "pdpj_api"
               }
             }
@@ -21144,7 +21144,7 @@
       "method": "POST",
       "url": "http://localhost:8000/api/v1/processes/10001459120238260597/download-documents",
       "status_code": 200,
-      "response_time": 0.673,
+      "response_time": 0.661,
       "success": true,
       "content_type": "application/json",
       "content_length": 148,
@@ -21161,7 +21161,7 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/monitoring/status",
       "status_code": 200,
-      "response_time": 0.173,
+      "response_time": 0.005,
       "success": true,
       "content_type": "application/json",
       "content_length": 146,
@@ -21182,10 +21182,10 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/monitoring/metrics",
       "status_code": 200,
-      "response_time": 0.04,
+      "response_time": 0.005,
       "success": true,
       "content_type": "application/json",
-      "content_length": 2439,
+      "content_length": 2440,
       "json_response": {
         "active_alerts": 0,
         "alerts_by_severity": {
@@ -21241,7 +21241,7 @@
             "critical": 0.2
           }
         },
-        "prometheus_metrics": "# HELP python_gc_objects_collected_total Objects collected during gc\n# TYPE python_gc_objects_collected_total counter\npython_gc_objects_collected_total{generation=\"0\"} 9900.0\npython_gc_objects_collected_total{generation=\"1\"} 4430.0\npython_gc_objects_collected_total{generation=\"2\"} 917.0\n# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC\n# TYPE python_gc_objects_uncollectable_total counter\npython_gc_objects_uncollectable_total{generation=\"0\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"1\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"2\"} 0.0\n# HELP python_gc_collections_total Number of times this generation was collected\n# TYPE python_gc_collections_total counter\npython_gc_collections_total{generation=\"0\"} 367.0\npython_gc_collections_total{generation=\"1\"} 33.0\npython_gc_collections_total{generation=\"2\"} 3.0\n# HELP python_info Python platform information\n# TYPE python_info gauge\npython_info{implementation=\"CPython\",major=\"3\",minor=\"12\",patchlevel=\"6\",version=\"3.12.6\"} 1.0\n# HELP pdpj_requests_total Total number of requests\n# TYPE pdpj_requests_total counter\n# HELP pdpj_request_duration_seconds Request duration in seconds\n# TYPE pdpj_request_duration_seconds histogram\n# HELP pdpj_errors_total Total number of errors\n# TYPE pdpj_errors_total counter\n# HELP pdpj_active_alerts Number of active alerts\n# TYPE pdpj_active_alerts gauge\n# HELP pdpj_cache_hit_rate Cache hit rate percentage\n# TYPE pdpj_cache_hit_rate gauge\npdpj_cache_hit_rate 0.0\n# HELP pdpj_memory_usage_bytes Memory usage in bytes\n# TYPE pdpj_memory_usage_bytes gauge\npdpj_memory_usage_bytes 0.0\n# HELP pdpj_rate_limit_hits_total Total rate limit hits\n# TYPE pdpj_rate_limit_hits_total counter\n"
+        "prometheus_metrics": "# HELP python_gc_objects_collected_total Objects collected during gc\n# TYPE python_gc_objects_collected_total counter\npython_gc_objects_collected_total{generation=\"0\"} 10036.0\npython_gc_objects_collected_total{generation=\"1\"} 4978.0\npython_gc_objects_collected_total{generation=\"2\"} 138.0\n# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC\n# TYPE python_gc_objects_uncollectable_total counter\npython_gc_objects_uncollectable_total{generation=\"0\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"1\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"2\"} 0.0\n# HELP python_gc_collections_total Number of times this generation was collected\n# TYPE python_gc_collections_total counter\npython_gc_collections_total{generation=\"0\"} 367.0\npython_gc_collections_total{generation=\"1\"} 33.0\npython_gc_collections_total{generation=\"2\"} 3.0\n# HELP python_info Python platform information\n# TYPE python_info gauge\npython_info{implementation=\"CPython\",major=\"3\",minor=\"12\",patchlevel=\"6\",version=\"3.12.6\"} 1.0\n# HELP pdpj_requests_total Total number of requests\n# TYPE pdpj_requests_total counter\n# HELP pdpj_request_duration_seconds Request duration in seconds\n# TYPE pdpj_request_duration_seconds histogram\n# HELP pdpj_errors_total Total number of errors\n# TYPE pdpj_errors_total counter\n# HELP pdpj_active_alerts Number of active alerts\n# TYPE pdpj_active_alerts gauge\n# HELP pdpj_cache_hit_rate Cache hit rate percentage\n# TYPE pdpj_cache_hit_rate gauge\npdpj_cache_hit_rate 0.0\n# HELP pdpj_memory_usage_bytes Memory usage in bytes\n# TYPE pdpj_memory_usage_bytes gauge\npdpj_memory_usage_bytes 0.0\n# HELP pdpj_rate_limit_hits_total Total rate limit hits\n# TYPE pdpj_rate_limit_hits_total counter\n"
       }
     },
     {
@@ -21249,10 +21249,10 @@
       "method": "GET",
       "url": "http://localhost:8000/api/v1/monitoring/performance",
       "status_code": 200,
-      "response_time": 0.016,
+      "response_time": 0.004,
       "success": true,
       "content_type": "application/json",
-      "content_length": 2439,
+      "content_length": 2440,
       "json_response": {
         "active_alerts": 0,
         "alerts_by_severity": {
@@ -21308,7 +21308,7 @@
             "critical": 0.2
           }
         },
-        "prometheus_metrics": "# HELP python_gc_objects_collected_total Objects collected during gc\n# TYPE python_gc_objects_collected_total counter\npython_gc_objects_collected_total{generation=\"0\"} 9900.0\npython_gc_objects_collected_total{generation=\"1\"} 4430.0\npython_gc_objects_collected_total{generation=\"2\"} 917.0\n# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC\n# TYPE python_gc_objects_uncollectable_total counter\npython_gc_objects_uncollectable_total{generation=\"0\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"1\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"2\"} 0.0\n# HELP python_gc_collections_total Number of times this generation was collected\n# TYPE python_gc_collections_total counter\npython_gc_collections_total{generation=\"0\"} 367.0\npython_gc_collections_total{generation=\"1\"} 33.0\npython_gc_collections_total{generation=\"2\"} 3.0\n# HELP python_info Python platform information\n# TYPE python_info gauge\npython_info{implementation=\"CPython\",major=\"3\",minor=\"12\",patchlevel=\"6\",version=\"3.12.6\"} 1.0\n# HELP pdpj_requests_total Total number of requests\n# TYPE pdpj_requests_total counter\n# HELP pdpj_request_duration_seconds Request duration in seconds\n# TYPE pdpj_request_duration_seconds histogram\n# HELP pdpj_errors_total Total number of errors\n# TYPE pdpj_errors_total counter\n# HELP pdpj_active_alerts Number of active alerts\n# TYPE pdpj_active_alerts gauge\n# HELP pdpj_cache_hit_rate Cache hit rate percentage\n# TYPE pdpj_cache_hit_rate gauge\npdpj_cache_hit_rate 0.0\n# HELP pdpj_memory_usage_bytes Memory usage in bytes\n# TYPE pdpj_memory_usage_bytes gauge\npdpj_memory_usage_bytes 0.0\n# HELP pdpj_rate_limit_hits_total Total rate limit hits\n# TYPE pdpj_rate_limit_hits_total counter\n"
+        "prometheus_metrics": "# HELP python_gc_objects_collected_total Objects collected during gc\n# TYPE python_gc_objects_collected_total counter\npython_gc_objects_collected_total{generation=\"0\"} 10036.0\npython_gc_objects_collected_total{generation=\"1\"} 4978.0\npython_gc_objects_collected_total{generation=\"2\"} 138.0\n# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC\n# TYPE python_gc_objects_uncollectable_total counter\npython_gc_objects_uncollectable_total{generation=\"0\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"1\"} 0.0\npython_gc_objects_uncollectable_total{generation=\"2\"} 0.0\n# HELP python_gc_collections_total Number of times this generation was collected\n# TYPE python_gc_collections_total counter\npython_gc_collections_total{generation=\"0\"} 367.0\npython_gc_collections_total{generation=\"1\"} 33.0\npython_gc_collections_total{generation=\"2\"} 3.0\n# HELP python_info Python platform information\n# TYPE python_info gauge\npython_info{implementation=\"CPython\",major=\"3\",minor=\"12\",patchlevel=\"6\",version=\"3.12.6\"} 1.0\n# HELP pdpj_requests_total Total number of requests\n# TYPE pdpj_requests_total counter\n# HELP pdpj_request_duration_seconds Request duration in seconds\n# TYPE pdpj_request_duration_seconds histogram\n# HELP pdpj_errors_total Total number of errors\n# TYPE pdpj_errors_total counter\n# HELP pdpj_active_alerts Number of active alerts\n# TYPE pdpj_active_alerts gauge\n# HELP pdpj_cache_hit_rate Cache hit rate percentage\n# TYPE pdpj_cache_hit_rate gauge\npdpj_cache_hit_rate 0.0\n# HELP pdpj_memory_usage_bytes Memory usage in bytes\n# TYPE pdpj_memory_usage_bytes gauge\npdpj_memory_usage_bytes 0.0\n# HELP pdpj_rate_limit_hits_total Total rate limit hits\n# TYPE pdpj_rate_limit_hits_total counter\n"
       }
     },
     {
