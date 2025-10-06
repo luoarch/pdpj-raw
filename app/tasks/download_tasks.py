@@ -14,6 +14,7 @@ from app.models.process_job import JobStatus
 from app.services.pdpj_client import pdpj_client
 from app.services.s3_service import s3_service
 from app.services.webhook_service import webhook_service
+from app.utils.status_manager import status_manager
 from sqlalchemy import select, update
 
 
@@ -105,7 +106,18 @@ def download_process_documents_async(
                     
                     for doc in batch:
                         try:
-                            # Atualizar status: PENDING → PROCESSING
+                            # Validar transição de status
+                            current_status = DocumentStatus(doc.status) if hasattr(doc, 'status') else DocumentStatus.PENDING
+                            can_transition, error = status_manager.can_transition_document(
+                                current_status,
+                                DocumentStatus.PROCESSING
+                            )
+                            
+                            if not can_transition:
+                                logger.warning(f"⚠️ Pulando {doc.name}: {error}")
+                                continue
+                            
+                            # Atualizar status: PENDING/FAILED → PROCESSING
                             await db.execute(
                                 update(Document).where(Document.id == doc.id).values(
                                     status=DocumentStatus.PROCESSING.value,
@@ -148,32 +160,62 @@ def download_process_documents_async(
                             # Gerar URL presignada
                             download_url = await s3_service.generate_presigned_url(s3_key, expiration=3600)
                             
-                            # Atualizar documento: PROCESSING → AVAILABLE
-                            await db.execute(
-                                update(Document).where(Document.id == doc.id).values(
-                                    status=DocumentStatus.AVAILABLE.value,
-                                    downloaded=True,
-                                    s3_key=s3_key,
-                                    s3_bucket=s3_service.bucket_name,
-                                    download_url=download_url,
-                                    size=len(content),
-                                    download_completed_at=datetime.utcnow(),
-                                    error_message=None
-                                )
+                            # Validar transição: PROCESSING → AVAILABLE
+                            can_transition, error = status_manager.can_transition_document(
+                                DocumentStatus.PROCESSING,
+                                DocumentStatus.AVAILABLE
                             )
                             
-                            completed += 1
-                            logger.info(f"✅ {doc.name} completo ({completed}/{total})")
+                            if can_transition:
+                                # Atualizar documento: PROCESSING → AVAILABLE
+                                await db.execute(
+                                    update(Document).where(Document.id == doc.id).values(
+                                        status=DocumentStatus.AVAILABLE.value,
+                                        downloaded=True,
+                                        s3_key=s3_key,
+                                        s3_bucket=s3_service.bucket_name,
+                                        download_url=download_url,
+                                        size=len(content),
+                                        download_completed_at=datetime.utcnow(),
+                                        error_message=None
+                                    )
+                                )
+                                
+                                completed += 1
+                                logger.info(f"✅ {doc.name} completo ({completed}/{total})")
+                            else:
+                                logger.error(f"❌ Transição inválida ao marcar como AVAILABLE: {error}")
+                                raise Exception(f"Erro de transição: {error}")
                             
                         except Exception as e:
                             # Marcar como falha: PROCESSING → FAILED
-                            await db.execute(
-                                update(Document).where(Document.id == doc.id).values(
-                                    status=DocumentStatus.FAILED.value,
-                                    error_message=str(e)[:500],  # Limitar tamanho
-                                    download_completed_at=datetime.utcnow()
-                                )
+                            # Verificar transição (pode falhar de PENDING ou PROCESSING)
+                            current_doc_status = DocumentStatus(doc.status) if hasattr(doc, 'status') else DocumentStatus.PROCESSING
+                            
+                            can_transition, trans_error = status_manager.can_transition_document(
+                                current_doc_status,
+                                DocumentStatus.FAILED
                             )
+                            
+                            if can_transition:
+                                await db.execute(
+                                    update(Document).where(Document.id == doc.id).values(
+                                        status=DocumentStatus.FAILED.value,
+                                        error_message=str(e)[:500],  # Limitar tamanho
+                                        download_completed_at=datetime.utcnow()
+                                    )
+                                )
+                            else:
+                                # Forçar FAILED mesmo se transição inválida (safety)
+                                logger.warning(f"⚠️ Forçando FAILED apesar de transição inválida")
+                                await db.execute(
+                                    update(Document).where(Document.id == doc.id).values(
+                                        status=DocumentStatus.FAILED.value,
+                                        error_message=str(e)[:500],
+                                        download_completed_at=datetime.utcnow()
+                                    )
+                                )
+                            
                             failed += 1
                             logger.error(f"❌ Falha em {doc.name}: {e}")
                         
