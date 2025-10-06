@@ -80,7 +80,7 @@ class ChunkedDownloadService:
                 
                 # Upload para S3
                 s3_key = f"processos/{process_number}/documentos/{document_id}/{document_name}"
-                await s3_service.upload_file(
+                await s3_service.upload_document(
                     file_content=file_content,
                     s3_key=s3_key,
                     content_type=file_info.get("content_type", "application/octet-stream")
@@ -250,7 +250,7 @@ class ChunkedDownloadService:
                 
                 # Upload para S3
                 s3_key = f"processos/{process_number}/documentos/{document_id}/{document_name}"
-                await s3_service.upload_file(
+                await s3_service.upload_document(
                     file_content=file_content,
                     s3_key=s3_key,
                     content_type=file_info.get("content_type", "application/octet-stream")

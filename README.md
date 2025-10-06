@@ -23,8 +23,8 @@ Esta é uma API Python enterprise-grade e altamente escalável para consultar, a
 - **Docker and Docker Compose** (para ambiente containerizado)
 - **PostgreSQL 14+** (banco de dados principal)
 - **Redis 6+** (cache e rate limiting)
-- **AWS credentials** (para S3 storage)
-- **PDPJ API tokens** (autenticação com o portal)
+- **AWS credentials** (para S3 storage) - **Configurado ✅**
+- **PDPJ API tokens** (autenticação com o portal) - **Configurado ✅**
 - **Sentry DSN** (opcional, para error tracking)
 
 ## Quick Start
@@ -83,8 +83,26 @@ Esta é uma API Python enterprise-grade e altamente escalável para consultar, a
    ```bash
    ENVIRONMENT=development
    DEBUG=true
+   
+   # AWS S3 (obrigatório para armazenamento de documentos)
+   AWS_ACCESS_KEY_ID=sua_chave
+   AWS_SECRET_ACCESS_KEY=sua_chave_secreta
+   AWS_REGION=sa-east-1
+   S3_BUCKET_NAME=pdpj-documents-br
+   
+   # PDPJ API
+   PDPJ_API_BASE_URL=https://portaldeservicos.pdpj.jus.br
+   PDPJ_API_TOKEN=seu_token_jwt
    ```
-4. Execute a aplicação:
+4. **Configure permissões AWS S3:**
+   ```bash
+   # Configurar AWS CLI
+   aws configure
+   
+   # Aplicar permissões IAM
+   ./fix_s3_permissions.sh
+   ```
+5. Execute a aplicação:
    ```bash
    ./run-local.sh
    ```
@@ -278,6 +296,23 @@ graph TD
 - **`test_monitoring_metrics.py`** - Testes de monitoramento ✅
 - **`test_performance_load.py`** - Testes de performance ✅
 - **`test_integration_complete.py`** - Testes de integração ✅
+
+### Testes Oficiais (Pytest)
+```bash
+# Testes S3 e PDPJ (críticos)
+./venv/bin/pytest -v -m critical
+
+# Todos os testes S3
+./venv/bin/pytest tests/test_s3_service.py tests/test_pdpj_s3_integration.py -v
+
+# Ver guia completo
+cat tests/README_S3_TESTS.md
+```
+
+### Scripts de Diagnóstico
+- **`test_s3_connectivity.py`** - Diagnóstico completo S3 ✅
+- **`test_s3_real_operations.py`** - Operações reais S3 ✅
+- **`test_api_v2_download.py`** - Download PDPJ com /api/v2/ ✅
 
 ## Contributing
 Contribuições, issues e feature requests são bem-vindos!  

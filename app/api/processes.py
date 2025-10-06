@@ -395,8 +395,21 @@ async def get_process_files(
         for i, doc in enumerate(documents):
             if i % 50 == 0:  # Log a cada 50 documentos
                 logger.info(f"📊 Processando documento {i+1}/{len(documents)}")
+            
+            # Extrair UUID do hrefBinario se disponível
+            document_uuid = doc.document_id  # Padrão: usar idOrigem
+            if doc.raw_data and doc.raw_data.get("hrefBinario"):
+                href = doc.raw_data.get("hrefBinario", "")
+                # hrefBinario formato: /processos/.../documentos/{UUID}/binario
+                parts = href.split("/documentos/")
+                if len(parts) == 2:
+                    uuid_part = parts[1].split("/")[0]
+                    if "-" in uuid_part:  # Validação básica de UUID
+                        document_uuid = uuid_part
+            
             doc_data = {
-                "id": doc.document_id,
+                "id": doc.document_id,  # ID original (numérico)
+                "uuid": document_uuid,  # UUID para download
                 "name": doc.name,
                 "type": doc.type,
                 "size": doc.size,
@@ -677,6 +690,130 @@ async def download_process_documents(
         await download_throttle.release(user_id)
 
 
+@router.post("/{process_number}/download-all-documents")
+async def download_all_documents_physical(
+    process_number: str,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(require_user_or_admin())
+):
+    """Baixar TODOS os documentos de um processo fisicamente e fazer upload para S3."""
+    logger.info(f"🚀 Iniciando download em massa de documentos para: {process_number}")
+    
+    try:
+        # Buscar processo
+        normalized_number = normalize_process_number(process_number)
+        process_result = await db.execute(
+            select(Process).where(Process.process_number == normalized_number)
+        )
+        process = process_result.scalar_one_or_none()
+        
+        if not process:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Processo {process_number} não encontrado"
+            )
+        
+        # Buscar TODOS os documentos (sempre baixa, mesmo se já foi baixado)
+        result = await db.execute(
+            select(Document).where(Document.process_id == process.id)
+        )
+        documents = result.scalars().all()
+        
+        if not documents:
+            return {
+                "process_number": process_number,
+                "message": "Nenhum documento encontrado para este processo",
+                "total": 0,
+                "downloaded": 0,
+                "failed": 0
+            }
+        
+        logger.info(f"📊 Total de documentos para baixar: {len(documents)}")
+        
+        downloaded_count = 0
+        failed_count = 0
+        results = []
+        
+        # Baixar em lotes de 5
+        batch_size = 5
+        for i in range(0, len(documents), batch_size):
+            batch = documents[i:i + batch_size]
+            logger.info(f"📦 Processando lote {i//batch_size + 1}: {len(batch)} documentos")
+            
+            for doc in batch:
+                try:
+                    # Extrair hrefBinario
+                    href_binario = doc.raw_data.get("hrefBinario") if doc.raw_data else None
+                    if not href_binario:
+                        failed_count += 1
+                        results.append({"document_id": doc.document_id, "status": "failed", "error": "hrefBinario não encontrado"})
+                        continue
+                    
+                    # Baixar documento
+                    download_result = await pdpj_client.download_document(href_binario, doc.name)
+                    
+                    if download_result.get('is_valid') and download_result.get('saved_path'):
+                        with open(download_result['saved_path'], 'rb') as f:
+                            document_content = f.read()
+                        
+                        # Upload para S3
+                        s3_key = f"processos/{process_number}/documentos/{doc.document_id}/{doc.name}"
+                        await s3_service.upload_document(
+                            file_content=document_content,
+                            process_number=process_number,
+                            document_id=doc.document_id,
+                            filename=doc.name,
+                            content_type=doc.mime_type or "application/pdf"
+                        )
+                        
+                        # Gerar URL presignada
+                        download_url = await s3_service.generate_presigned_url(s3_key, expiration=3600)
+                        
+                        # Atualizar no banco
+                        await db.execute(
+                            update(Document).where(Document.id == doc.id).values(
+                                s3_key=s3_key,
+                                s3_bucket=s3_service.bucket_name,
+                                download_url=download_url,
+                                size=len(document_content),
+                                downloaded=True,
+                                updated_at=datetime.utcnow()
+                            )
+                        )
+                        
+                        downloaded_count += 1
+                        results.append({"document_id": doc.document_id, "name": doc.name, "status": "success", "size": len(document_content)})
+                        logger.info(f"✅ {doc.name} baixado com sucesso")
+                    else:
+                        failed_count += 1
+                        results.append({"document_id": doc.document_id, "status": "failed", "error": "Download inválido"})
+                    
+                except Exception as e:
+                    failed_count += 1
+                    results.append({"document_id": doc.document_id, "status": "error", "error": str(e)})
+                    logger.error(f"❌ Erro ao baixar {doc.name}: {e}")
+            
+            await db.commit()
+            await asyncio.sleep(1)  # Pequena pausa entre lotes
+        
+        return {
+            "process_number": process_number,
+            "message": f"Download em massa concluído",
+            "total": len(documents),
+            "downloaded": downloaded_count,
+            "failed": failed_count,
+            "results": results
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Erro no download em massa: {str(e)}"
+        )
+
+
 @router.post("/{process_number}/download-document/{document_id}")
 async def download_document_physical(
     process_number: str,
@@ -684,17 +821,52 @@ async def download_document_physical(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(require_user_or_admin())
 ):
-    """Baixar um documento específico fisicamente e fazer upload para S3."""
+    """Baixar um documento específico fisicamente e fazer upload para S3.
+    
+    Args:
+        document_id: Pode ser o ID numérico (idOrigem) ou UUID do hrefBinario
+    """
     try:
         # Buscar documento no banco (usando número normalizado)
         normalized_number = normalize_process_number(process_number)
+        
+        # Primeiro buscar o processo
+        process_result = await db.execute(
+            select(Process).where(Process.process_number == normalized_number)
+        )
+        process = process_result.scalar_one_or_none()
+        
+        if not process:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Processo {process_number} não encontrado"
+            )
+        
+        # Tentar buscar documento por ID numérico primeiro
         result = await db.execute(
             select(Document).where(
-                Document.process_id == select(Process.id).where(Process.process_number == normalized_number),
+                Document.process_id == process.id,
                 Document.document_id == document_id
             )
         )
         document = result.scalar_one_or_none()
+        
+        # Se não encontrou e document_id parece ser UUID, buscar no hrefBinario
+        if not document and "-" in document_id:
+            logger.info(f"🔍 Buscando documento por UUID no hrefBinario: {document_id}")
+            result = await db.execute(
+                select(Document).where(Document.process_id == process.id)
+            )
+            all_docs = result.scalars().all()
+            
+            # Procurar UUID no hrefBinario
+            for doc in all_docs:
+                if doc.raw_data and doc.raw_data.get("hrefBinario"):
+                    href = doc.raw_data.get("hrefBinario", "")
+                    if document_id in href:
+                        document = doc
+                        logger.info(f"✅ Documento encontrado por UUID: {doc.document_id}")
+                        break
         
         if not document:
             raise HTTPException(
@@ -720,7 +892,17 @@ async def download_document_physical(
         
         # Baixar documento da API PDPJ usando hrefBinario
         try:
-            document_content = await pdpj_client.download_document(href_binario)
+            download_result = await pdpj_client.download_document(href_binario)
+            
+            # O pdpj_client retorna metadados, precisamos ler o arquivo salvo
+            if download_result.get('is_valid') and download_result.get('saved_path'):
+                with open(download_result['saved_path'], 'rb') as f:
+                    document_content = f.read()
+            else:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail=f"Erro ao baixar documento: arquivo inválido"
+                )
         except PDPJClientError as e:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
@@ -732,9 +914,11 @@ async def download_document_physical(
         
         # Upload para S3
         try:
-            await s3_service.upload_file(
+            await s3_service.upload_document(
                 file_content=document_content,
-                s3_key=s3_key,
+                process_number=process_number,
+                document_id=document_id,
+                filename=document.name,
                 content_type=document.mime_type or "application/pdf"
             )
             

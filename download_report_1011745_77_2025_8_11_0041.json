@@ -1,0 +1,417 @@
+{
+  "process_number": "1011745-77.2025.8.11.0041",
+  "timestamp": "283902.948500458",
+  "summary": {
+    "total_documents": 29,
+    "downloaded_successfully": 29,
+    "failed": 0
+  },
+  "details": [
+    {
+      "document_id": "d207ebcd-e13d-501a-8a46-ee45fc21fea6",
+      "name": "1. CNH.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento d207ebcd-e13d-501a-8a46-ee45fc21fea6 baixado e armazenado com sucesso",
+        "document_id": "d207ebcd-e13d-501a-8a46-ee45fc21fea6",
+        "name": "1. CNH.pdf",
+        "size": 221858,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/d207ebcd-e13d-501a-8a46-ee45fc21fea6/1. CNH.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/d207ebcd-e13d-501a-8a46-ee45fc21fea6/1.%20CNH.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=TXAAwKA%2BBCKa63r0KQbk7iFKibQ%3D&Expires=1759753651",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "4a8760e4-5c78-5ec3-bb75-ac1ebecae4d3",
+      "name": "2. COMPROVANTE DE RESIDENCIA.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 4a8760e4-5c78-5ec3-bb75-ac1ebecae4d3 baixado e armazenado com sucesso",
+        "document_id": "4a8760e4-5c78-5ec3-bb75-ac1ebecae4d3",
+        "name": "2. COMPROVANTE DE RESIDENCIA.pdf",
+        "size": 44025,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/4a8760e4-5c78-5ec3-bb75-ac1ebecae4d3/2. COMPROVANTE DE RESIDENCIA.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/4a8760e4-5c78-5ec3-bb75-ac1ebecae4d3/2.%20COMPROVANTE%20DE%20RESIDENCIA.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=LM2S4puC131QnwqNmoR9ew9ocbw%3D&Expires=1759753651",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "0f0fde0a-3aa1-5eba-9756-376d867736fa",
+      "name": "5. CTPS DIGITAL.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 0f0fde0a-3aa1-5eba-9756-376d867736fa baixado e armazenado com sucesso",
+        "document_id": "0f0fde0a-3aa1-5eba-9756-376d867736fa",
+        "name": "5. CTPS DIGITAL.pdf",
+        "size": 50806,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/0f0fde0a-3aa1-5eba-9756-376d867736fa/5. CTPS DIGITAL.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/0f0fde0a-3aa1-5eba-9756-376d867736fa/5.%20CTPS%20DIGITAL.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=cYP7bFdn0AxJGxuq4amyi8wpXe8%3D&Expires=1759753651",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "9f087f34-1854-598e-8d34-6192429cf052",
+      "name": "5.1. EXTRATO CNIS.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 9f087f34-1854-598e-8d34-6192429cf052 baixado e armazenado com sucesso",
+        "document_id": "9f087f34-1854-598e-8d34-6192429cf052",
+        "name": "5.1. EXTRATO CNIS.pdf",
+        "size": 380347,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/9f087f34-1854-598e-8d34-6192429cf052/5.1. EXTRATO CNIS.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/9f087f34-1854-598e-8d34-6192429cf052/5.1.%20EXTRATO%20CNIS.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=3dH2UcE%2BOptIDXeN71VErqRWChs%3D&Expires=1759753655",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "4b4d29c6-1095-5423-b095-35d460089192",
+      "name": "5.2. CARTA DE CONCESSÃO.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 4b4d29c6-1095-5423-b095-35d460089192 baixado e armazenado com sucesso",
+        "document_id": "4b4d29c6-1095-5423-b095-35d460089192",
+        "name": "5.2. CARTA DE CONCESSÃO.pdf",
+        "size": 350766,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/4b4d29c6-1095-5423-b095-35d460089192/5.2. CARTA DE CONCESSÃO.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/4b4d29c6-1095-5423-b095-35d460089192/5.2.%20CARTA%20DE%20CONCESS%C3%83O.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=x22IkvWhduzDR4jPvboqr3p8%2BR0%3D&Expires=1759753655",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "87e58570-7101-5b3f-913d-ea5430570ae0",
+      "name": "5.3. LAUDO PERICIAL.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 87e58570-7101-5b3f-913d-ea5430570ae0 baixado e armazenado com sucesso",
+        "document_id": "87e58570-7101-5b3f-913d-ea5430570ae0",
+        "name": "5.3. LAUDO PERICIAL.pdf",
+        "size": 137971,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/87e58570-7101-5b3f-913d-ea5430570ae0/5.3. LAUDO PERICIAL.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/87e58570-7101-5b3f-913d-ea5430570ae0/5.3.%20LAUDO%20PERICIAL.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=mA9mxR7%2BQWmio6DvxC6ep8Ep1kw%3D&Expires=1759753655",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "6df153f5-dfc2-5124-b688-2b9268bc0c89",
+      "name": "Relatorio-Valor-Causa-ADEMIR ARAUJO PEREIRA JUNIOR-17-03-2025.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 6df153f5-dfc2-5124-b688-2b9268bc0c89 baixado e armazenado com sucesso",
+        "document_id": "6df153f5-dfc2-5124-b688-2b9268bc0c89",
+        "name": "Relatorio-Valor-Causa-ADEMIR ARAUJO PEREIRA JUNIOR-17-03-2025.pdf",
+        "size": 179205,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/6df153f5-dfc2-5124-b688-2b9268bc0c89/Relatorio-Valor-Causa-ADEMIR ARAUJO PEREIRA JUNIOR-17-03-2025.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/6df153f5-dfc2-5124-b688-2b9268bc0c89/Relatorio-Valor-Causa-ADEMIR%20ARAUJO%20PEREIRA%20JUNIOR-17-03-2025.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=6aS25spBfpjfJfSwTLZQwKPkipE%3D&Expires=1759753655",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "6b76487d-2227-5e1b-bafe-8624f4ee39fa",
+      "name": "Certidão de conferência de autuação com alteração (AUT).html",
+      "status": "success",
+      "result": {
+        "message": "Documento 6b76487d-2227-5e1b-bafe-8624f4ee39fa baixado e armazenado com sucesso",
+        "document_id": "6b76487d-2227-5e1b-bafe-8624f4ee39fa",
+        "name": "Certidão de conferência de autuação com alteração (AUT).html",
+        "size": 124264,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/6b76487d-2227-5e1b-bafe-8624f4ee39fa/Certidão de conferência de autuação com alteração (AUT).html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/6b76487d-2227-5e1b-bafe-8624f4ee39fa/Certid%C3%A3o%20de%20confer%C3%AAncia%20de%20autua%C3%A7%C3%A3o%20com%20altera%C3%A7%C3%A3o%20%28AUT%29.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=NmHoWcvC7z9WfS4czaVzWfUUn5k%3D&Expires=1759753655",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "ab711118-f626-51d3-8c38-24b00aaa26fb",
+      "name": "Certidão Juízo 100% Digital (AUT).html",
+      "status": "success",
+      "result": {
+        "message": "Documento ab711118-f626-51d3-8c38-24b00aaa26fb baixado e armazenado com sucesso",
+        "document_id": "ab711118-f626-51d3-8c38-24b00aaa26fb",
+        "name": "Certidão Juízo 100% Digital (AUT).html",
+        "size": 127,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/ab711118-f626-51d3-8c38-24b00aaa26fb/Certidão Juízo 100% Digital (AUT).html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/ab711118-f626-51d3-8c38-24b00aaa26fb/Certid%C3%A3o%20Ju%C3%ADzo%20100%25%20Digital%20%28AUT%29.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=IkbHmju%2Fq83yHEs5ryuXsau36Xk%3D&Expires=1759753659",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "a4221d41-a02a-5a20-885a-c029aa224030",
+      "name": "Certidão de inexistência de conexão, continência e prevenção (AUT).html",
+      "status": "success",
+      "result": {
+        "message": "Documento a4221d41-a02a-5a20-885a-c029aa224030 baixado e armazenado com sucesso",
+        "document_id": "a4221d41-a02a-5a20-885a-c029aa224030",
+        "name": "Certidão de inexistência de conexão, continência e prevenção (AUT).html",
+        "size": 123800,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/a4221d41-a02a-5a20-885a-c029aa224030/Certidão de inexistência de conexão, continência e prevenção (AUT).html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/a4221d41-a02a-5a20-885a-c029aa224030/Certid%C3%A3o%20de%20inexist%C3%AAncia%20de%20conex%C3%A3o%2C%20contin%C3%AAncia%20e%20preven%C3%A7%C3%A3o%20%28AUT%29.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=ozbJ9whULAQfNWcX6fdyT68FI2s%3D&Expires=1759753659",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "692ddd84-51ac-5416-8148-a5b991b19c65",
+      "name": "Certidão.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 692ddd84-51ac-5416-8148-a5b991b19c65 baixado e armazenado com sucesso",
+        "document_id": "692ddd84-51ac-5416-8148-a5b991b19c65",
+        "name": "Certidão.html",
+        "size": 3174,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/692ddd84-51ac-5416-8148-a5b991b19c65/Certidão.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/692ddd84-51ac-5416-8148-a5b991b19c65/Certid%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=Zexd6kwuL3Wb7nEX6%2FER0VPdNAE%3D&Expires=1759753659",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "e2140ad1-d4ac-528a-9cbc-effebf96cdba",
+      "name": "Certidão de pedido de justiça gratuita (AUT).html",
+      "status": "success",
+      "result": {
+        "message": "Documento e2140ad1-d4ac-528a-9cbc-effebf96cdba baixado e armazenado com sucesso",
+        "document_id": "e2140ad1-d4ac-528a-9cbc-effebf96cdba",
+        "name": "Certidão de pedido de justiça gratuita (AUT).html",
+        "size": 124169,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/e2140ad1-d4ac-528a-9cbc-effebf96cdba/Certidão de pedido de justiça gratuita (AUT).html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/e2140ad1-d4ac-528a-9cbc-effebf96cdba/Certid%C3%A3o%20de%20pedido%20de%20justi%C3%A7a%20gratuita%20%28AUT%29.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=QfwNOTpay8e6xy4%2BRQ5k5O%2Bzaa4%3D&Expires=1759753660",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "e5d12742-0145-51dd-b61a-559427eff62d",
+      "name": "Decisão.html",
+      "status": "success",
+      "result": {
+        "message": "Documento e5d12742-0145-51dd-b61a-559427eff62d baixado e armazenado com sucesso",
+        "document_id": "e5d12742-0145-51dd-b61a-559427eff62d",
+        "name": "Decisão.html",
+        "size": 17047,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/e5d12742-0145-51dd-b61a-559427eff62d/Decisão.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/e5d12742-0145-51dd-b61a-559427eff62d/Decis%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=zv%2F53Ek3ZUfThiy4W7D8WpJuyxc%3D&Expires=1759753659",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "ae0cc5f2-69de-5c07-b5b7-7fcdf924c3e2",
+      "name": "Decisão.html",
+      "status": "success",
+      "result": {
+        "message": "Documento ae0cc5f2-69de-5c07-b5b7-7fcdf924c3e2 baixado e armazenado com sucesso",
+        "document_id": "ae0cc5f2-69de-5c07-b5b7-7fcdf924c3e2",
+        "name": "Decisão.html",
+        "size": 17047,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/ae0cc5f2-69de-5c07-b5b7-7fcdf924c3e2/Decisão.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/ae0cc5f2-69de-5c07-b5b7-7fcdf924c3e2/Decis%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=BRKs%2FmhrVHAEWFDqxPWXMPgBtEw%3D&Expires=1759753663",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "b7557bc6-742f-59f1-9fbb-a78c4a5295bb",
+      "name": "Petição.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento b7557bc6-742f-59f1-9fbb-a78c4a5295bb baixado e armazenado com sucesso",
+        "document_id": "b7557bc6-742f-59f1-9fbb-a78c4a5295bb",
+        "name": "Petição.pdf",
+        "size": 80306,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/b7557bc6-742f-59f1-9fbb-a78c4a5295bb/Petição.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/b7557bc6-742f-59f1-9fbb-a78c4a5295bb/Peti%C3%A7%C3%A3o.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=KNVGRwn8J2NJjFZKwkyHblGvSlw%3D&Expires=1759753664",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "4ef19b24-07f2-59e2-92fe-463bad22d249",
+      "name": "Intimação.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 4ef19b24-07f2-59e2-92fe-463bad22d249 baixado e armazenado com sucesso",
+        "document_id": "4ef19b24-07f2-59e2-92fe-463bad22d249",
+        "name": "Intimação.html",
+        "size": 73923,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/4ef19b24-07f2-59e2-92fe-463bad22d249/Intimação.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/4ef19b24-07f2-59e2-92fe-463bad22d249/Intima%C3%A7%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=T1kGQ%2BUwhyYNlgV1T6rpgCKk8qc%3D&Expires=1759753663",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "8cca1869-b871-552d-afb3-5083b03a7ae5",
+      "name": "Agendamento de Pericia.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 8cca1869-b871-552d-afb3-5083b03a7ae5 baixado e armazenado com sucesso",
+        "document_id": "8cca1869-b871-552d-afb3-5083b03a7ae5",
+        "name": "Agendamento de Pericia.html",
+        "size": 21,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/8cca1869-b871-552d-afb3-5083b03a7ae5/Agendamento de Pericia.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/8cca1869-b871-552d-afb3-5083b03a7ae5/Agendamento%20de%20Pericia.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=c%2BcLUNf5F9pAZiG0qxov3ob9KmY%3D&Expires=1759753663",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "9c6074b7-2f2c-5490-b1e4-c1d83b65f07d",
+      "name": "Agendamento de Pericia.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 9c6074b7-2f2c-5490-b1e4-c1d83b65f07d baixado e armazenado com sucesso",
+        "document_id": "9c6074b7-2f2c-5490-b1e4-c1d83b65f07d",
+        "name": "Agendamento de Pericia.pdf",
+        "size": 2529587,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/9c6074b7-2f2c-5490-b1e4-c1d83b65f07d/Agendamento de Pericia.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/9c6074b7-2f2c-5490-b1e4-c1d83b65f07d/Agendamento%20de%20Pericia.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=LKLvWp7PPgRBpLSmHgEM4QtsrIw%3D&Expires=1759753665",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "c7e75efc-849d-5712-933b-084ad450d5c6",
+      "name": "Ato Ordinatório.html",
+      "status": "success",
+      "result": {
+        "message": "Documento c7e75efc-849d-5712-933b-084ad450d5c6 baixado e armazenado com sucesso",
+        "document_id": "c7e75efc-849d-5712-933b-084ad450d5c6",
+        "name": "Ato Ordinatório.html",
+        "size": 109961,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/c7e75efc-849d-5712-933b-084ad450d5c6/Ato Ordinatório.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/c7e75efc-849d-5712-933b-084ad450d5c6/Ato%20Ordinat%C3%B3rio.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=MjDPa3t%2BjJUVMFP8JjsNl68c90Y%3D&Expires=1759753668",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "d2c45600-3645-5754-a544-d996f9ca4e03",
+      "name": "Intimação.html",
+      "status": "success",
+      "result": {
+        "message": "Documento d2c45600-3645-5754-a544-d996f9ca4e03 baixado e armazenado com sucesso",
+        "document_id": "d2c45600-3645-5754-a544-d996f9ca4e03",
+        "name": "Intimação.html",
+        "size": 109961,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/d2c45600-3645-5754-a544-d996f9ca4e03/Intimação.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/d2c45600-3645-5754-a544-d996f9ca4e03/Intima%C3%A7%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=bPhLH8ssthXf32fIocY5CRvtoaA%3D&Expires=1759753669",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "24caa3d4-b04f-5c33-b105-629a4b568942",
+      "name": "Intimação.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 24caa3d4-b04f-5c33-b105-629a4b568942 baixado e armazenado com sucesso",
+        "document_id": "24caa3d4-b04f-5c33-b105-629a4b568942",
+        "name": "Intimação.html",
+        "size": 109961,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/24caa3d4-b04f-5c33-b105-629a4b568942/Intimação.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/24caa3d4-b04f-5c33-b105-629a4b568942/Intima%C3%A7%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=3kXk3uz1D8t0pV%2F3%2BvEov6Ej0%2F4%3D&Expires=1759753669",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "6edd7ca8-4909-5341-af2a-e2dec1de0c5d",
+      "name": "Quesitos.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 6edd7ca8-4909-5341-af2a-e2dec1de0c5d baixado e armazenado com sucesso",
+        "document_id": "6edd7ca8-4909-5341-af2a-e2dec1de0c5d",
+        "name": "Quesitos.pdf",
+        "size": 135132,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/6edd7ca8-4909-5341-af2a-e2dec1de0c5d/Quesitos.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/6edd7ca8-4909-5341-af2a-e2dec1de0c5d/Quesitos.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=2z7chxop%2BFoG0QZznQ3NXo7FCe4%3D&Expires=1759753668",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "0f996a31-06e2-5be3-a1cb-e03345ad39a2",
+      "name": "Laudo Pericial.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 0f996a31-06e2-5be3-a1cb-e03345ad39a2 baixado e armazenado com sucesso",
+        "document_id": "0f996a31-06e2-5be3-a1cb-e03345ad39a2",
+        "name": "Laudo Pericial.html",
+        "size": 21,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/0f996a31-06e2-5be3-a1cb-e03345ad39a2/Laudo Pericial.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/0f996a31-06e2-5be3-a1cb-e03345ad39a2/Laudo%20Pericial.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=7vxr3KH5MkeiDZ8Z6bg58Lb1yJw%3D&Expires=1759753668",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "e0867e59-f5e8-51b0-80d7-758f39430014",
+      "name": "ADEMIR ARAUJO PEREIRA JUNIOR .pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento e0867e59-f5e8-51b0-80d7-758f39430014 baixado e armazenado com sucesso",
+        "document_id": "e0867e59-f5e8-51b0-80d7-758f39430014",
+        "name": "ADEMIR ARAUJO PEREIRA JUNIOR .pdf",
+        "size": 2511692,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/e0867e59-f5e8-51b0-80d7-758f39430014/ADEMIR ARAUJO PEREIRA JUNIOR .pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/e0867e59-f5e8-51b0-80d7-758f39430014/ADEMIR%20ARAUJO%20PEREIRA%20JUNIOR%20.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=ezKY2N4wiRZF%2F%2Flo%2F1VG90%2FAdas%3D&Expires=1759753674",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "ed44bb81-b64f-5753-9468-33f5b909714f",
+      "name": "HONORARIO ADEMIR ARAUJO PEREIRA JUNIOR.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento ed44bb81-b64f-5753-9468-33f5b909714f baixado e armazenado com sucesso",
+        "document_id": "ed44bb81-b64f-5753-9468-33f5b909714f",
+        "name": "HONORARIO ADEMIR ARAUJO PEREIRA JUNIOR.pdf",
+        "size": 395935,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/ed44bb81-b64f-5753-9468-33f5b909714f/HONORARIO ADEMIR ARAUJO PEREIRA JUNIOR.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/ed44bb81-b64f-5753-9468-33f5b909714f/HONORARIO%20ADEMIR%20ARAUJO%20PEREIRA%20JUNIOR.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=hz0YZX0qFpU3Vub4gn8lCG8%2BKmI%3D&Expires=1759753673",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "6ebf24a3-a18e-5691-9c73-00bd241c5820",
+      "name": "Ato Ordinatório.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 6ebf24a3-a18e-5691-9c73-00bd241c5820 baixado e armazenado com sucesso",
+        "document_id": "6ebf24a3-a18e-5691-9c73-00bd241c5820",
+        "name": "Ato Ordinatório.html",
+        "size": 107435,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/6ebf24a3-a18e-5691-9c73-00bd241c5820/Ato Ordinatório.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/6ebf24a3-a18e-5691-9c73-00bd241c5820/Ato%20Ordinat%C3%B3rio.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=Eo9WoZie%2FUp57sKcUDeKye3p0Ik%3D&Expires=1759753673",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "72602bc1-631e-58d3-a79e-1a42da63850c",
+      "name": "Intimação.html",
+      "status": "success",
+      "result": {
+        "message": "Documento 72602bc1-631e-58d3-a79e-1a42da63850c baixado e armazenado com sucesso",
+        "document_id": "72602bc1-631e-58d3-a79e-1a42da63850c",
+        "name": "Intimação.html",
+        "size": 107435,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/72602bc1-631e-58d3-a79e-1a42da63850c/Intimação.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/72602bc1-631e-58d3-a79e-1a42da63850c/Intima%C3%A7%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=SlpFvROHCw8m%2FUg87V6aQPAK5hc%3D&Expires=1759753672",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "cad5c739-b3aa-5dc9-8a3d-7103ec00c585",
+      "name": "Intimação.html",
+      "status": "success",
+      "result": {
+        "message": "Documento cad5c739-b3aa-5dc9-8a3d-7103ec00c585 baixado e armazenado com sucesso",
+        "document_id": "cad5c739-b3aa-5dc9-8a3d-7103ec00c585",
+        "name": "Intimação.html",
+        "size": 107435,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/cad5c739-b3aa-5dc9-8a3d-7103ec00c585/Intimação.html",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/cad5c739-b3aa-5dc9-8a3d-7103ec00c585/Intima%C3%A7%C3%A3o.html?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=xXVWr4GxBJzsR8ZZ%2BqwWJua0%2FvE%3D&Expires=1759753672",
+        "expires_in": 3600
+      }
+    },
+    {
+      "document_id": "2877c34c-ab37-5369-be99-a9f33671ef2b",
+      "name": "Manifestação de Laudo Pericial.pdf",
+      "status": "success",
+      "result": {
+        "message": "Documento 2877c34c-ab37-5369-be99-a9f33671ef2b baixado e armazenado com sucesso",
+        "document_id": "2877c34c-ab37-5369-be99-a9f33671ef2b",
+        "name": "Manifestação de Laudo Pericial.pdf",
+        "size": 228491,
+        "s3_key": "processos/1011745-77.2025.8.11.0041/documentos/2877c34c-ab37-5369-be99-a9f33671ef2b/Manifestação de Laudo Pericial.pdf",
+        "download_url": "https://pdpj-documents-br.s3.amazonaws.com/processos/1011745-77.2025.8.11.0041/documentos/2877c34c-ab37-5369-be99-a9f33671ef2b/Manifesta%C3%A7%C3%A3o%20de%20Laudo%20Pericial.pdf?AWSAccessKeyId=AKIA4BAHGJGQHXCZF3QC&Signature=ovBll%2BDNOEDmuIS%2BdN5I3Bm3WYA%3D&Expires=1759753678",
+        "expires_in": 3600
+      }
+    }
+  ]
+}

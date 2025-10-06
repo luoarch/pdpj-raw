@@ -89,11 +89,14 @@ asyncio.run(buscar_documentos())
 
 ### 3. Download de Documento Individual
 
+**IMPORTANTE:** A API PDPJ requer `/api/v2/` no caminho das URLs de download.
+
 ```python
 async def download_documento():
     # Download com validação automática
+    # O cliente adiciona /api/v2/ automaticamente ao hrefBinario
     resultado = await pdpj_client.download_document(
-        href_binario="/processos/5000315-75.2025.4.03.6327/documentos/abc123/binario",
+        href_binario="/processos/5000315-75.2025.4.03.6327/documentos/59a2dbcc-bb58-5281-a656-cfe57861c2db/binario",
         document_name="sentenca.pdf"
     )
     
@@ -105,6 +108,10 @@ async def download_documento():
 
 asyncio.run(download_documento())
 ```
+
+**Nota sobre IDs de Documento:**
+- ✅ Use UUIDs: `59a2dbcc-bb58-5281-a656-cfe57861c2db`
+- ❌ Não use IDs numéricos: `333049132` (causará erro 400)
 
 ## 🚀 Uso Avançado
 
@@ -394,6 +401,61 @@ async def monitoramento_continuo():
 # asyncio.run(monitoramento_continuo())
 ```
 
+## 🔧 Configurações Importantes
+
+### URLs de Download
+
+**A API PDPJ v2 requer `/api/v2/` no caminho:**
+
+- ❌ Errado: `/processos/{numero}/documentos/{uuid}/binario`
+- ✅ Correto: `/api/v2/processos/{numero}/documentos/{uuid}/binario`
+
+O cliente **adiciona automaticamente** `/api/v2/` ao receber um `hrefBinario`, então você não precisa se preocupar com isso!
+
+### AWS S3 Integration
+
+O sistema armazena documentos baixados no S3:
+
+```python
+from app.services.s3_service import s3_service
+
+# Após download do PDPJ, upload para S3
+s3_result = await s3_service.upload_document(
+    file_content=document_content,
+    process_number="5000315-75.2025.4.03.6327",
+    document_id="59a2dbcc-bb58-5281-a656-cfe57861c2db",
+    filename="documento.pdf",
+    content_type="application/pdf"
+)
+
+# Gerar URL presignada (válida por 1 hora)
+download_url = await s3_service.generate_presigned_url(
+    s3_key=s3_result['s3_key'],
+    expiration=3600
+)
+```
+
+**Configuração S3 no .env:**
+```bash
+AWS_ACCESS_KEY_ID=sua_chave_aqui
+AWS_SECRET_ACCESS_KEY=sua_chave_secreta_aqui
+AWS_REGION=sa-east-1
+S3_BUCKET_NAME=pdpj-documents-br
+```
+
+### Testes
+
+Execute os testes críticos antes de deploy:
+
+```bash
+# Testes S3 e PDPJ
+./venv/bin/pytest -v -m critical
+
+# Resultado esperado: 14 passed ✅
+```
+
+---
+
 ## 🎯 Conclusão
 
 O PDPJClient é uma solução robusta e otimizada para integração com a API PDPJ, oferecendo:
@@ -403,5 +465,7 @@ O PDPJClient é uma solução robusta e otimizada para integração com a API PD
 - **Monitoramento**: Métricas detalhadas e alertas críticos
 - **Facilidade de Uso**: API simples e intuitiva
 - **Configurabilidade**: Flexibilidade para diferentes cenários
+- **Integração S3**: Armazenamento seguro de documentos na AWS
+- **URLs Corretas**: Adiciona `/api/v2/` automaticamente
 
 Para mais informações, consulte a documentação dos componentes auxiliares ou entre em contato com a equipe de desenvolvimento.

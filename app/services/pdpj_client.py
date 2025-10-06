@@ -461,10 +461,22 @@ class PDPJClient:
             download_timeout = timeout or self.download_timeout
             
             # Construir URL completa do documento
+            # A API PDPJ requer /api/v2/ no caminho para downloads
+            
+            # Verificar se base_url já contém /api/v2
+            base_has_api_v2 = self.base_url.endswith('/api/v2')
+            
             if href_binario.startswith('/'):
+                # Se base_url já tem /api/v2, não adicionar novamente
+                if not base_has_api_v2 and not href_binario.startswith('/api/v2/'):
+                    href_binario = f"/api/v2{href_binario}"
                 document_url = f"{self.base_url}{href_binario}"
             else:
-                document_url = f"{self.base_url}/{href_binario}"
+                # Caminho relativo
+                if base_has_api_v2:
+                    document_url = f"{self.base_url}/{href_binario}"
+                else:
+                    document_url = f"{self.base_url}/api/v2/{href_binario}"
             
             logger.debug(f"🔧 URL completa do documento: {document_url}")
             
@@ -666,13 +678,23 @@ class PDPJClient:
         
         return alerts
     
-    def _extract_process_number_from_href(self, href_binario: str) -> str:
+    def _extract_process_number_from_href(self, href_binario: str) -> Optional[str]:
         """Extrair número do processo do hrefBinario."""
         try:
-            # hrefBinario: /processos/1000145-91.2023.8.26.0597/documentos/.../binario
+            # hrefBinario pode ser:
+            # /processos/1000145-91.2023.8.26.0597/documentos/.../binario
+            # OU (após adicionar /api/v2/):
+            # /api/v2/processos/1000145-91.2023.8.26.0597/documentos/.../binario
             parts = href_binario.split('/')
-            if len(parts) >= 3 and parts[1] == 'processos':
-                return parts[2]
+            
+            # Procurar a parte 'processos'
+            try:
+                processos_index = parts.index('processos')
+                if processos_index + 1 < len(parts):
+                    return parts[processos_index + 1]
+            except ValueError:
+                pass
+            
             return None
         except Exception:
             return None

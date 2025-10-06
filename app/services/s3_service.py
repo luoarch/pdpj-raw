@@ -63,13 +63,15 @@ class S3Service:
     def __init__(self):
         self.bucket_name = settings.s3_bucket_name
         self.region = settings.aws_region
-        self.access_key_id = settings.aws_access_key_id
-        self.secret_access_key = settings.aws_secret_access_key
+        
+        # CORREÇÃO: Extrair valores corretos do SecretStr
+        self.access_key_id = settings.aws_access_key_id.get_secret_value() if hasattr(settings.aws_access_key_id, 'get_secret_value') else str(settings.aws_access_key_id)
+        self.secret_access_key = settings.aws_secret_access_key.get_secret_value() if hasattr(settings.aws_secret_access_key, 'get_secret_value') else str(settings.aws_secret_access_key)
         
         # Configurar sessão boto3 com timeout
         self.session = aioboto3.Session(
-            aws_access_key_id=str(self.access_key_id),
-            aws_secret_access_key=str(self.secret_access_key),
+            aws_access_key_id=self.access_key_id,
+            aws_secret_access_key=self.secret_access_key,
             region_name=self.region
         )
         

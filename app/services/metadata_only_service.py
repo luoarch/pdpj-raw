@@ -75,12 +75,26 @@ class MetadataOnlyService:
                     "tamanho_texto": arquivo_info.get("tamanhoTexto"),
                 })
             
-            # URLs (para referência, mesmo que não funcionem para download direto)
+            # URLs (corrigidas com /api/v2/ para funcionarem corretamente)
+            href_binario = doc.get("hrefBinario", "")
+            href_texto = doc.get("hrefTexto", "")
+            
+            # Adicionar /api/v2/ se necessário
+            if href_binario and not href_binario.startswith("/api/v2/"):
+                href_binario_completo = f"/api/v2{href_binario}"
+            else:
+                href_binario_completo = href_binario
+                
+            if href_texto and not href_texto.startswith("/api/v2/"):
+                href_texto_completo = f"/api/v2{href_texto}"
+            else:
+                href_texto_completo = href_texto
+            
             metadata.update({
                 "href_binario": doc.get("hrefBinario"),
                 "href_texto": doc.get("hrefTexto"),
-                "url_binario": f"https://portaldeservicos.pdpj.jus.br{doc.get('hrefBinario', '')}" if doc.get("hrefBinario") else None,
-                "url_texto": f"https://portaldeservicos.pdpj.jus.br{doc.get('hrefTexto', '')}" if doc.get("hrefTexto") else None,
+                "url_binario": f"https://portaldeservicos.pdpj.jus.br{href_binario_completo}" if href_binario else None,
+                "url_texto": f"https://portaldeservicos.pdpj.jus.br{href_texto_completo}" if href_texto else None,
             })
             
             # Informações adicionais úteis

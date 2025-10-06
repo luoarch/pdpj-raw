@@ -1,0 +1,311 @@
+{
+  "process_number": "5029295-47.2024.4.03.6301",
+  "timestamp": "282057.194063541",
+  "summary": {
+    "total_documents": 50,
+    "downloaded_successfully": 0,
+    "failed": 50
+  },
+  "details": [
+    {
+      "document_id": "333049132",
+      "name": "Petição inicial.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049143",
+      "name": "0.1. CERTIFICADO-FOTO.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049145",
+      "name": "0.2. PROCURAÇÃO-DECLARAÇÃO.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049147",
+      "name": "1. CNH.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049149",
+      "name": "2. COMPROVANTE DE RESIDENCIA.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049852",
+      "name": "5. CTPS.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049855",
+      "name": "5.1. EXTRATO CNIS.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049859",
+      "name": "5.2. CARTA DE CONCESSÃO.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049863",
+      "name": "5.3. LAUDO PERICIAL I.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049865",
+      "name": "5.3. LAUDO PERICIAL II.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049868",
+      "name": "5.3. LAUDO PERICIAL III.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049872",
+      "name": "6. DOCUMENTOS MÉDICOS.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "333049875",
+      "name": "Relatorio-Valor-Causa-ADEMIR APARECIDO DE SOUSA DIAS-26-07-2024.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334028591",
+      "name": "Certidão.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334028594",
+      "name": "Informação de Irregularidade.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334030854",
+      "name": "Ato Ordinatório.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334228882",
+      "name": "35132781870_Declaração de Benefícios.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334228883",
+      "name": "35132781870_Extrato CNIS.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334228884",
+      "name": "35132781870_Relatório Dados Cadastrais CNIS.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334228885",
+      "name": "35132781870_Histórico de Créditos.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334228886",
+      "name": "35132781870_Quadro Resumo Dossiê Previdenciário.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "334228887",
+      "name": "35132781870_Dossiê Médico.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "336944050",
+      "name": "Emenda à Inicial.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "339607535",
+      "name": "Ato Ordinatório.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "339607536",
+      "name": "Ato Ordinatório.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "341599952",
+      "name": "Petição Intercorrente.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "345099613",
+      "name": "Decisão.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "349831537",
+      "name": "QUESITOS.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "351685526",
+      "name": "INCAPACIDADE PARCIAL E PERMANENTE.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "352955328",
+      "name": "Citação e intimação.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "355369851",
+      "name": "Outras peças.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "356172529",
+      "name": "Contestação.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "356172530",
+      "name": "Petição Intercorrente.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "356247503",
+      "name": "Despacho.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "357769291",
+      "name": "RELATÓRIO MÉDICO DE ESCLARECIMENTOS.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "357926648",
+      "name": "Certidão.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "358551648",
+      "name": "Réplica.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "360670635",
+      "name": "Ato Ordinatório.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "364208075",
+      "name": "Proposta de Acordo.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "364453053",
+      "name": "Ato Ordinatório.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "364453610",
+      "name": "Ato Ordinatório.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "365087119",
+      "name": "Petição Intercorrente.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "365087126",
+      "name": "0. CONTRATO-AÇÃO-PREVIDENCIARIA.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "365087129",
+      "name": "0.1. CERTIFICADO-FOTO.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "365965895",
+      "name": "Sentença.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "366052537",
+      "name": "Tópico Síntese.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "366178963",
+      "name": "Notificação de Envio.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "366560262",
+      "name": "Documento Comprobatório.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "366560017",
+      "name": "Notificação de Conclusão.pdf",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    },
+    {
+      "document_id": "367818818",
+      "name": "Informação.html",
+      "status": "failed",
+      "error": "HTTP 404: {\"detail\":\"Erro ao baixar documento: Erro no download: Erro ao baixar documento: Erro ao baixar documento: HTTP 401\"}"
+    }
+  ]
+}
