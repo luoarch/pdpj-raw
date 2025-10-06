@@ -6,6 +6,18 @@ Esta é uma API Python enterprise-grade e altamente escalável para consultar, a
 **🚀 Performance Enterprise**: Capaz de processar **milhares de processos** com **monitoramento completo**, **rate limiting inteligente** e **arquitetura robusta** para produção.
 
 ## Features Principais
+
+### 🚀 Download Assíncrono com Webhook (NOVO!)
+- **Download automático** ao consultar processo
+- **Processamento em background** via Celery
+- **Webhook callback opcional** com retry automático (3x)
+- **Monitoramento em tempo real** com progresso 0-100%
+- **Retry automático** de downloads (3x com backoff exponencial)
+- **Idempotência** em 3 níveis (job ativo, processo completo, cache)
+- **Validação de estados** com StatusManager
+- **Regeneração automática** de links S3 expirados
+
+### 🏢 Infraestrutura Enterprise
 - **FastAPI enterprise** com middleware stack completo e monitoramento avançado
 - **PDPJClient otimizado** com retry inteligente, rate limiting e métricas detalhadas
 - **ProcessCacheService** com Redis Pipeline para operações bulk ultra-rápidas
@@ -22,7 +34,8 @@ Esta é uma API Python enterprise-grade e altamente escalável para consultar, a
 - **Python 3.12+** (recomendado para melhor performance)
 - **Docker and Docker Compose** (para ambiente containerizado)
 - **PostgreSQL 14+** (banco de dados principal)
-- **Redis 6+** (cache e rate limiting)
+- **Redis 6+** (cache, rate limiting e Celery broker) - **CRÍTICO** ⚡
+- **Celery Workers** (processamento assíncrono) - **NOVO** 🆕
 - **AWS credentials** (para S3 storage) - **Configurado ✅**
 - **PDPJ API tokens** (autenticação com o portal) - **Configurado ✅**
 - **Sentry DSN** (opcional, para error tracking)
@@ -69,7 +82,25 @@ Esta é uma API Python enterprise-grade e altamente escalável para consultar, a
    python test_integration_complete.py
    ```
 
-#### Opção 2: Desenvolvimento Local
+#### Opção 2: Desenvolvimento Local (Completo - API + Celery)
+
+**Script Automatizado (Recomendado):**
+```bash
+# 1. Setup inicial (apenas primeira vez)
+./setup-local.sh
+
+# 2. Iniciar API + Celery juntos
+./start-dev-complete.sh
+```
+
+Isso inicia automaticamente:
+- ✅ API FastAPI (porta 8000)
+- ✅ Celery Worker (4 workers)
+- ✅ Verifica Redis e PostgreSQL
+- ✅ Logs separados (logs/api.log, logs/celery.log)
+
+**Setup Manual (se preferir):**
+
 1. Clone o repositório:
    ```bash
    git clone <repo-url>
@@ -142,12 +173,25 @@ Esta é uma API Python enterprise-grade e altamente escalável para consultar, a
 ### Usage Enterprise
 
 #### Endpoints Principais
+
+##### 📋 Processos
 - **Documentação interativa**: `http://localhost:8000/docs`
 - **Busca de processos**: `POST /api/v1/processes/search` - Busca com paginação e filtros
-- **Processo único**: `GET /api/v1/processes/{process_number}` - Dados completos do processo
-- **Documentos**: `GET /api/v1/processes/{process_number}/files` - Lista de documentos
-- **Download**: `POST /api/v1/processes/{process_number}/download-documents` - Download em lote
-- **Monitoramento**: `GET /api/v1/monitoring/status` - Status do sistema
+- **Processo único**: `GET /api/v1/processes/{numero}?auto_download=true&webhook_url={url}` - **NOVO!** ⚡
+- **Status e progresso**: `GET /api/v1/processes/{numero}/status` - **NOVO!** 📊
+- **Documentos**: `GET /api/v1/processes/{numero}/files` - Lista de documentos
+- **Download metadados**: `POST /api/v1/processes/{numero}/download-documents` - Registrar metadados
+- **Download individual**: `POST /api/v1/processes/{numero}/download-document/{id}` - Baixar 1 documento
+- **Download em massa**: `POST /api/v1/processes/{numero}/download-all-documents` - Baixar todos
+
+##### 🔔 Webhooks (NOVO!)
+- **Validar URL**: `POST /api/v1/webhooks/webhook-validate` - Validar webhook URL
+- **Testar conectividade**: `POST /api/v1/webhooks/webhook-test-connectivity` - Testar acesso
+- **Enviar teste**: `POST /api/v1/webhooks/webhook-send-test` - Enviar payload de teste
+- **Receptor de teste**: `POST /api/v1/webhooks/webhook-test-receiver` - Endpoint para testes
+
+##### 📊 Monitoramento
+- **Status do sistema**: `GET /api/v1/monitoring/status` - Status geral
 - **Métricas**: `GET /api/v1/monitoring/metrics` - Métricas detalhadas
 
 #### Exemplo de Uso
