@@ -2,9 +2,18 @@
 
 from datetime import datetime
 from typing import Optional
-from sqlalchemy import String, Text, DateTime, JSON, BigInteger, ForeignKey, Boolean
+from enum import Enum
+from sqlalchemy import String, Text, DateTime, JSON, BigInteger, ForeignKey, Boolean, Enum as SQLEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.core.database import Base
+
+
+class DocumentStatus(str, Enum):
+    """Status do processamento de documento."""
+    PENDING = "pending"           # Aguardando download (com webhook)
+    PROCESSING = "processing"     # Download em andamento
+    AVAILABLE = "available"       # Disponível no S3
+    FAILED = "failed"            # Falha no download/upload
 
 
 class Document(Base):
@@ -18,7 +27,7 @@ class Document(Base):
     document_id: Mapped[str] = mapped_column(String(100), unique=True, index=True, nullable=False)
     
     # Relacionamento com processo
-    process_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("pdpj.processes.id"), nullable=False)
+    process_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("pdpj.processes.id", ondelete="CASCADE"), nullable=False, index=True)
     process: Mapped["Process"] = relationship("Process", back_populates="documents")
     
     # Metadados do documento
@@ -48,5 +57,21 @@ class Document(Base):
     downloaded: Mapped[bool] = mapped_column(default=False, nullable=False)
     available: Mapped[bool] = mapped_column(default=True, nullable=False)
     
+    # Status de processamento (NOVO)
+    status: Mapped[str] = mapped_column(
+        SQLEnum(DocumentStatus),
+        default=DocumentStatus.PENDING.value,
+        nullable=False,
+        index=True  # Índice para consultas por status
+    )
+    error_message: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    download_started_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True, index=True)
+    download_completed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    
+    @property
+    def is_available(self) -> bool:
+        """Propriedade computada: documento disponível quando status == AVAILABLE."""
+        return self.status == DocumentStatus.AVAILABLE.value
+    
     def __repr__(self) -> str:
-        return f"<Document(document_id='{self.document_id}', name='{self.name}')>"
+        return f"<Document(document_id='{self.document_id}', name='{self.name}', status='{self.status}')>"

@@ -47,6 +47,11 @@ class Process(Base):
         back_populates="process",
         cascade="all, delete-orphan"
     )
+    jobs: Mapped[List["ProcessJob"]] = relationship(
+        "ProcessJob",
+        back_populates="process",
+        cascade="all, delete-orphan"
+    )
     
     def __repr__(self) -> str:
         return f"<Process(process_number='{self.process_number}', court='{self.court}')>"
