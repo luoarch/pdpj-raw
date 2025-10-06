@@ -18,7 +18,7 @@ def register_api_routers(app: FastAPI):
     """
     try:
         # Importação local para evitar dependências circulares
-        from app.api import processes, users, monitoring
+        from app.api import processes, users, monitoring, webhooks
         
         logger.info("Iniciando registro de routers da API")
         
@@ -40,13 +40,14 @@ def register_api_routers(app: FastAPI):
 
 def _register_versioned_routers(app: FastAPI):
     """Registrar routers versionados com prefixo /api/v1."""
-    from app.api import processes, users, monitoring
+    from app.api import processes, users, monitoring, webhooks
     
     # Configuração de routers versionados
     routers_config = [
         (processes.router, "processes", "Processos judiciais"),
         (users.router, "users", "Gerenciamento de usuários"),
         (monitoring.router, "monitoring", "Monitoramento e métricas"),
+        (webhooks.router, "webhooks", "Webhooks e callbacks"),
     ]
     
     for router, tag, description in routers_config:
