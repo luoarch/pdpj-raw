@@ -105,91 +105,118 @@ def download_process_documents_async(
                     logger.info(f"📦 Processando lote {batch_index}: {len(batch)} documentos")
                     
                     for doc in batch:
-                        try:
-                            # Validar transição de status
-                            current_status = DocumentStatus(doc.status) if hasattr(doc, 'status') else DocumentStatus.PENDING
-                            can_transition, error = status_manager.can_transition_document(
-                                current_status,
-                                DocumentStatus.PROCESSING
-                            )
-                            
-                            if not can_transition:
-                                logger.warning(f"⚠️ Pulando {doc.name}: {error}")
-                                continue
-                            
-                            # Atualizar status: PENDING/FAILED → PROCESSING
-                            await db.execute(
-                                update(Document).where(Document.id == doc.id).values(
-                                    status=DocumentStatus.PROCESSING.value,
-                                    download_started_at=datetime.utcnow()
-                                )
-                            )
-                            await db.commit()
-                            
-                            logger.info(f"⬇️ Baixando: {doc.name}")
-                            
-                            # Extrair hrefBinario
-                            href_binario = doc.raw_data.get("hrefBinario") if doc.raw_data else None
-                            if not href_binario:
-                                raise Exception("hrefBinario não encontrado")
-                            
-                            # Download do PDPJ
-                            download_result = await pdpj_client.download_document(href_binario, doc.name)
-                            
-                            if not download_result.get('is_valid'):
-                                raise Exception("Download inválido ou corrompido")
-                            
-                            # Ler arquivo baixado
-                            with open(download_result['saved_path'], 'rb') as f:
-                                content = f.read()
-                            
-                            logger.info(f"📦 Arquivo baixado: {len(content)} bytes")
-                            
-                            # Upload para S3
-                            s3_key = f"processos/{process_number}/documentos/{doc.document_id}/{doc.name}"
-                            await s3_service.upload_document(
-                                file_content=content,
-                                process_number=process_number,
-                                document_id=doc.document_id,
-                                filename=doc.name,
-                                content_type=doc.mime_type or "application/pdf"
-                            )
-                            
-                            logger.info(f"☁️ Upload S3 completo: {s3_key}")
-                            
-                            # Gerar URL presignada
-                            download_url = await s3_service.generate_presigned_url(s3_key, expiration=3600)
-                            
-                            # Validar transição: PROCESSING → AVAILABLE
-                            can_transition, error = status_manager.can_transition_document(
-                                DocumentStatus.PROCESSING,
-                                DocumentStatus.AVAILABLE
-                            )
-                            
-                            if can_transition:
-                                # Atualizar documento: PROCESSING → AVAILABLE
-                                await db.execute(
-                                    update(Document).where(Document.id == doc.id).values(
-                                        status=DocumentStatus.AVAILABLE.value,
-                                        downloaded=True,
-                                        s3_key=s3_key,
-                                        s3_bucket=s3_service.bucket_name,
-                                        download_url=download_url,
-                                        size=len(content),
-                                        download_completed_at=datetime.utcnow(),
-                                        error_message=None
-                                    )
+                        # RETRY AUTOMÁTICO: Tentar até 3 vezes antes de marcar como FAILED
+                        max_retries = 3
+                        retry_delay = 2  # segundos
+                        last_error = None
+                        download_success = False
+                        
+                        for retry_attempt in range(1, max_retries + 1):
+                            try:
+                                # Validar transição de status
+                                current_status = DocumentStatus(doc.status) if hasattr(doc, 'status') else DocumentStatus.PENDING
+                                can_transition, error = status_manager.can_transition_document(
+                                    current_status,
+                                    DocumentStatus.PROCESSING
                                 )
                                 
-                                completed += 1
-                                logger.info(f"✅ {doc.name} completo ({completed}/{total})")
-                            else:
-                                logger.error(f"❌ Transição inválida ao marcar como AVAILABLE: {error}")
-                                raise Exception(f"Erro de transição: {error}")
+                                if not can_transition:
+                                    logger.warning(f"⚠️ Pulando {doc.name}: {error}")
+                                    break  # Sair do loop de retry
+                                
+                                # Atualizar status: PENDING/FAILED → PROCESSING
+                                await db.execute(
+                                    update(Document).where(Document.id == doc.id).values(
+                                        status=DocumentStatus.PROCESSING.value,
+                                        download_started_at=datetime.utcnow()
+                                    )
+                                )
+                                await db.commit()
+                                
+                                if retry_attempt > 1:
+                                    logger.info(f"🔄 Retry {retry_attempt}/{max_retries}: {doc.name}")
+                                else:
+                                    logger.info(f"⬇️ Baixando: {doc.name}")
+                                
+                                # Extrair hrefBinario
+                                href_binario = doc.raw_data.get("hrefBinario") if doc.raw_data else None
+                                if not href_binario:
+                                    raise Exception("hrefBinario não encontrado")
+                                
+                                # Download do PDPJ
+                                download_result = await pdpj_client.download_document(href_binario, doc.name)
                             
-                        except Exception as e:
+                                if not download_result.get('is_valid'):
+                                    raise Exception("Download inválido ou corrompido")
+                                
+                                # Ler arquivo baixado
+                                with open(download_result['saved_path'], 'rb') as f:
+                                    content = f.read()
+                                
+                                logger.info(f"📦 Arquivo baixado: {len(content)} bytes")
+                            
+                                # Upload para S3
+                                s3_key = f"processos/{process_number}/documentos/{doc.document_id}/{doc.name}"
+                                await s3_service.upload_document(
+                                    file_content=content,
+                                    process_number=process_number,
+                                    document_id=doc.document_id,
+                                    filename=doc.name,
+                                    content_type=doc.mime_type or "application/pdf"
+                                )
+                                
+                                logger.info(f"☁️ Upload S3 completo: {s3_key}")
+                                
+                                # Gerar URL presignada
+                                download_url = await s3_service.generate_presigned_url(s3_key, expiration=3600)
+                                
+                                # Validar transição: PROCESSING → AVAILABLE
+                                can_transition, error = status_manager.can_transition_document(
+                                    DocumentStatus.PROCESSING,
+                                    DocumentStatus.AVAILABLE
+                                )
+                                
+                                if can_transition:
+                                    # Atualizar documento: PROCESSING → AVAILABLE
+                                    await db.execute(
+                                        update(Document).where(Document.id == doc.id).values(
+                                            status=DocumentStatus.AVAILABLE.value,
+                                            downloaded=True,
+                                            s3_key=s3_key,
+                                            s3_bucket=s3_service.bucket_name,
+                                            download_url=download_url,
+                                            size=len(content),
+                                            download_completed_at=datetime.utcnow(),
+                                            error_message=None
+                                        )
+                                    )
+                                    
+                                    completed += 1
+                                    download_success = True  # Sucesso, sair do loop de retry
+                                    logger.info(f"✅ {doc.name} completo ({completed}/{total})")
+                                    break  # Sucesso - sair do loop de retry
+                                else:
+                                    logger.error(f"❌ Transição inválida ao marcar como AVAILABLE: {error}")
+                                    raise Exception(f"Erro de transição: {error}")
+                            
+                            except Exception as e:
+                                last_error = e
+                                
+                                # Se não é a última tentativa, aguardar e tentar novamente
+                                if retry_attempt < max_retries:
+                                    wait_time = retry_delay * (2 ** (retry_attempt - 1))  # Backoff: 2s, 4s, 8s
+                                    logger.warning(f"⚠️ Erro em {doc.name} (tentativa {retry_attempt}/{max_retries}): {str(e)[:100]}")
+                                    logger.info(f"⏳ Aguardando {wait_time}s antes de retry...")
+                                    await asyncio.sleep(wait_time)
+                                    continue  # Tentar novamente
+                                else:
+                                    # Última tentativa falhou - marcar como FAILED
+                                    logger.error(f"❌ Falha definitiva em {doc.name} após {max_retries} tentativas: {e}")
+                                    raise  # Re-lançar para tratar no except externo
+                        
+                        # Se chegou aqui sem sucesso, marcar como FAILED
+                        if not download_success:
                             # Marcar como falha: PROCESSING → FAILED
-                            # Verificar transição (pode falhar de PENDING ou PROCESSING)
                             current_doc_status = DocumentStatus(doc.status) if hasattr(doc, 'status') else DocumentStatus.PROCESSING
                             
                             can_transition, trans_error = status_manager.can_transition_document(
@@ -197,11 +224,13 @@ def download_process_documents_async(
                                 DocumentStatus.FAILED
                             )
                             
+                            error_msg = f"Falhou após {max_retries} tentativas: {str(last_error)[:400]}"
+                            
                             if can_transition:
                                 await db.execute(
                                     update(Document).where(Document.id == doc.id).values(
                                         status=DocumentStatus.FAILED.value,
-                                        error_message=str(e)[:500],  # Limitar tamanho
+                                        error_message=error_msg,
                                         download_completed_at=datetime.utcnow()
                                     )
                                 )
@@ -211,13 +240,13 @@ def download_process_documents_async(
                                 await db.execute(
                                     update(Document).where(Document.id == doc.id).values(
                                         status=DocumentStatus.FAILED.value,
-                                        error_message=str(e)[:500],
+                                        error_message=error_msg,
                                         download_completed_at=datetime.utcnow()
                                     )
                                 )
                             
                             failed += 1
-                            logger.error(f"❌ Falha em {doc.name}: {e}")
+                            logger.error(f"❌ Documento marcado como FAILED: {doc.name}")
                         
                         # Atualizar progresso do job
                         progress = ((completed + failed) / total) * 100
