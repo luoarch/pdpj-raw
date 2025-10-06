@@ -237,7 +237,10 @@ async def get_process(
                     )
                 logger.info(f"✅ Webhook URL validada: {webhook_url}")
             
-            # Verificar se já existe job ativo (IDEMPOTÊNCIA)
+            # IDEMPOTÊNCIA AVANÇADA
+            logger.info(f"🔍 Verificando idempotência...")
+            
+            # 1. Verificar se já existe job ativo (PENDING ou PROCESSING)
             existing_job = await db.execute(
                 select(ProcessJob).where(
                     ProcessJob.process_id == process.id,
@@ -247,12 +250,52 @@ async def get_process(
             active_job = existing_job.scalar_one_or_none()
             
             if active_job:
-                logger.info(f"♻️ Job já existe e está ativo: {active_job.job_id} (status: {active_job.status})")
+                logger.info(f"♻️ Job ativo encontrado: {active_job.job_id} (status: {active_job.status})")
                 logger.info(f"📊 Progresso atual: {active_job.progress_percentage:.1f}%")
                 # Retornar sem criar novo job
-                # Desconectar da sessão para evitar lazy loading
                 db.expunge(process)
                 return ProcessResponse.model_validate(process)
+            
+            # 2. Verificar se TODOS os documentos já foram baixados (job completo anterior)
+            docs_count = await db.execute(
+                select(func.count()).select_from(
+                    select(Document).where(
+                        Document.process_id == process.id,
+                        Document.status == DocumentStatus.AVAILABLE.value
+                    ).subquery()
+                )
+            )
+            available_count = docs_count.scalar()
+            total_docs = len(process.documents)
+            
+            if available_count == total_docs and total_docs > 0:
+                logger.info(f"✅ Todos os documentos já estão disponíveis ({available_count}/{total_docs})")
+                logger.info(f"📦 Regenerando links S3 se necessário...")
+                
+                # Regenerar links S3 expirados
+                updated_count = 0
+                for doc in process.documents:
+                    if doc.downloaded and doc.s3_key and doc.status == DocumentStatus.AVAILABLE.value:
+                        try:
+                            # Gerar nova URL presignada
+                            new_url = await s3_service.generate_presigned_url(doc.s3_key, expiration=3600)
+                            await db.execute(
+                                update(Document).where(Document.id == doc.id).values(
+                                    download_url=new_url,
+                                    updated_at=datetime.utcnow()
+                                )
+                            )
+                            updated_count += 1
+                        except Exception as e:
+                            logger.warning(f"⚠️ Erro ao regenerar URL para {doc.name}: {e}")
+                
+                await db.commit()
+                logger.info(f"🔗 {updated_count} links S3 regenerados")
+                logger.info(f"ℹ️ Nenhum job criado - processo já completo")
+                db.expunge(process)
+                return ProcessResponse.model_validate(process)
+            
+            logger.info(f"📊 Documentos disponíveis: {available_count}/{total_docs} - Criando novo job")
             
             # IMPORTANTE: Registrar job no banco ANTES de chamar Celery
             # Gerar job_id único
