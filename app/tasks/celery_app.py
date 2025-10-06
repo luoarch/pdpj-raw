@@ -8,7 +8,7 @@ celery_app = Celery(
     "pdpj_tasks",
     broker=settings.celery_broker_url,
     backend=settings.celery_result_backend,
-    include=["app.tasks.process_tasks", "app.tasks.document_tasks"]
+    include=["app.tasks.process_tasks", "app.tasks.document_tasks", "app.tasks.download_tasks"]
 )
 
 # Configurações do Celery otimizadas para alta performance

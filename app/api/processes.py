@@ -32,6 +32,7 @@ from app.models import Process, User, Document, DocumentStatus, ProcessJob, JobS
 from app.services.pdpj_client import pdpj_client, PDPJClientError
 from app.services.session_manager import get_active_session_cookie
 from app.services.process_cache_service import process_cache_service
+from app.services.webhook_service import webhook_service
 from app.utils.file_utils import process_document_download
 from app.utils.transaction_manager import TransactionManager, with_transaction
 from app.utils.pagination_utils import (
@@ -142,11 +143,27 @@ async def list_processes(
 async def get_process(
     process_number: str,
     force_refresh: bool = False,
+    webhook_url: Optional[str] = None,  # NOVO: URL para callback quando download completo
+    auto_download: bool = True,          # NOVO: Iniciar download automático
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(require_user_or_admin())
 ):
-    """Obter dados de um processo específico."""
+    """
+    Obter dados de um processo específico.
+    
+    NOVA FUNCIONALIDADE:
+    - Se auto_download=true (padrão), inicia download assíncrono de documentos
+    - Se webhook_url fornecido, envia callback quando processamento completo
+    - Consulte GET /{numero}/status para acompanhar progresso
+    """
     try:
+        logger.info("=" * 80)
+        logger.info(f"🔍 GET /processes/{process_number}")
+        logger.info(f"   auto_download: {auto_download}")
+        logger.info(f"   webhook_url: {webhook_url or 'Não fornecido'}")
+        logger.info(f"   force_refresh: {force_refresh}")
+        logger.info("=" * 80)
+        
         # Verificar cache primeiro (se não for refresh forçado)
         if not force_refresh:
             cache_key = get_process_cache_key(process_number, "full")
@@ -194,15 +211,116 @@ async def get_process(
                 cache_key = get_process_cache_key(process_number, "full")
                 await cache_service.set(cache_key, pdpj_data)
                 
-                return ProcessResponse.model_validate(process)
-                
             except PDPJClientError as e:
                 raise HTTPException(
                     status_code=status.HTTP_404_NOT_FOUND,
                     detail=f"Processo {process_number} não encontrado: {str(e)}"
                 )
         
-        return ProcessResponse.model_validate(process)
+        # Carregar relacion relationships antes de qualquer operação Celery
+        # Isso evita lazy loading posterior
+        await db.refresh(process, ["documents", "jobs"])
+        
+        # NOVO: Iniciar download assíncrono se auto_download=true
+        logger.info(f"🔎 Verificando auto_download: {auto_download}, has_documents: {process.has_documents}")
+        
+        if auto_download and process.has_documents:
+            logger.info(f"🚀 CONDIÇÃO ATENDIDA: Iniciando download assíncrono para processo {process_number}")
+            
+            # Validar webhook_url se fornecido
+            if webhook_url:
+                is_valid, error = webhook_service.validate_webhook_url(webhook_url)
+                if not is_valid:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Webhook URL inválida: {error}"
+                    )
+                logger.info(f"✅ Webhook URL validada: {webhook_url}")
+            
+            # Verificar se já existe job ativo (IDEMPOTÊNCIA)
+            existing_job = await db.execute(
+                select(ProcessJob).where(
+                    ProcessJob.process_id == process.id,
+                    ProcessJob.status.in_([JobStatus.PENDING.value, JobStatus.PROCESSING.value])
+                ).order_by(ProcessJob.created_at.desc())
+            )
+            active_job = existing_job.scalar_one_or_none()
+            
+            if active_job:
+                logger.info(f"♻️ Job já existe e está ativo: {active_job.job_id} (status: {active_job.status})")
+                logger.info(f"📊 Progresso atual: {active_job.progress_percentage:.1f}%")
+                # Retornar sem criar novo job
+                # Desconectar da sessão para evitar lazy loading
+                db.expunge(process)
+                return ProcessResponse.model_validate(process)
+            
+            # IMPORTANTE: Registrar job no banco ANTES de chamar Celery
+            # Gerar job_id único
+            import uuid as uuid_module
+            job_id = str(uuid_module.uuid4())
+            
+            # Definir status inicial dos documentos baseado em webhook
+            initial_status = DocumentStatus.PENDING.value if webhook_url else DocumentStatus.PROCESSING.value
+            
+            # Atualizar status de documentos ainda não baixados
+            await db.execute(
+                update(Document).where(
+                    Document.process_id == process.id,
+                    Document.downloaded == False
+                ).values(
+                    status=initial_status
+                )
+            )
+            
+            # Criar registro do job no banco
+            process_job = ProcessJob(
+                job_id=job_id,
+                process_id=process.id,
+                webhook_url=webhook_url,
+                total_documents=len(process.documents) if process.documents else 0,
+                status=JobStatus.PENDING.value
+            )
+            db.add(process_job)
+            await db.commit()
+            
+            logger.info(f"✅ Job registrado no banco: {job_id}")
+            logger.info(f"📊 Documentos marcados com status: {initial_status}")
+            
+            # Agendar download assíncrono via Celery (DEPOIS de registrar no banco)
+            from app.tasks.download_tasks import download_process_documents_async
+            
+            try:
+                # Usar task_id pré-gerado
+                job = download_process_documents_async.apply_async(
+                    args=[process.id, process_number, webhook_url],
+                    queue='documents',
+                    task_id=job_id  # Usar o mesmo ID
+                )
+                logger.info(f"🚀 Download assíncrono agendado com sucesso: {job.id}")
+            except Exception as celery_error:
+                logger.error(f"❌ Erro ao agendar task Celery: {celery_error}")
+                # Marcar job como failed
+                await db.execute(
+                    update(ProcessJob).where(ProcessJob.id == process_job.id).values(
+                        status=JobStatus.FAILED.value,
+                        error_message=str(celery_error)
+                    )
+                )
+                await db.commit()
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=f"Erro ao agendar download: {str(celery_error)}"
+                )
+        else:
+            if not auto_download:
+                logger.info(f"ℹ️ auto_download=false - Pulando download assíncrono")
+            elif not process.has_documents:
+                logger.info(f"ℹ️ Processo sem documentos - Pulando download assíncrono")
+        
+        logger.info(f"📤 Retornando ProcessResponse para: {process_number}")
+        response = ProcessResponse.model_validate(process)
+        logger.info(f"✅ Response montada: process_number={response.process_number}")
+        return response
         
     except HTTPException:
         raise

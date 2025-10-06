@@ -59,7 +59,7 @@ class Document(Base):
     
     # Status de processamento (NOVO)
     status: Mapped[str] = mapped_column(
-        SQLEnum(DocumentStatus),
+        SQLEnum(DocumentStatus, name='documentstatus', schema='pdpj'),
         default=DocumentStatus.PENDING.value,
         nullable=False,
         index=True  # Índice para consultas por status
